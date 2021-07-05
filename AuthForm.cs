@@ -17,5 +17,16 @@ namespace WindowsFormsApp2
 	{
 		public AuthForm() { InitializeComponent(); }
 		private void AuthForm_Load(object sender, EventArgs e) { }
+
+		//
+		//ПОДТВЕРЖДЕНИЕ И ВЫХОД ИЗ ОКНА АВТОРИЗАЦИИ
+		//
+
+		private void AuthAccept(object sender, EventArgs e)
+		{
+			Form1 f1 = new Form1();
+			f1.Token = textBox1.Text;
+			this.Close();
+		}
 	}
 }

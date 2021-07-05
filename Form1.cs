@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
         //
         //ВЫЗОВ ОКНА АВТОРИЗАЦИИ
         //
-
+        Object TokenUser, TokenGroup, GroupId;
         private void button1_Click(object sender, EventArgs e)
         {
             AuthForm f1 = new AuthForm();
@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
         }
 
         //
-        //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
+        //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
         //
 
         public static string getAuthForGroup()
@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
         }
 
         //
-        //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
+        //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
 
         public static string getAuthForUser()
