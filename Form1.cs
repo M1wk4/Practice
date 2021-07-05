@@ -29,11 +29,12 @@ namespace WindowsFormsApp2
         public static string getAuthForGroup()
         {
             string fileName = @"auth_vk.txt";
-            string token = "10d744f6cdb1d5d9d43394930b77532b39319202db531c07b9c0e2383c266fe43aadaf04945bb742b8398&expires_in=86400&user_id=253662157";
+            string token = "";
             try
             {
                 using (StreamReader sr = new StreamReader(fileName))
                 {
+                    
                     token = sr.ReadLine();
                 }
             }
@@ -44,8 +45,15 @@ namespace WindowsFormsApp2
             return token;
         }
         private void button1_Click(object sender, EventArgs e)
-        {
+        {   
             label1.Text = getAuthForGroup();
+            var api_group = new VkApi();
+            api_group.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForGroup()
+            });
+
+
         }
     }
 }
