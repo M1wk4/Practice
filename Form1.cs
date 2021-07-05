@@ -44,6 +44,24 @@ namespace WindowsFormsApp2
             }
             return token;
         }
+        public static string getAuthForUser()
+        {
+            string fileName = @"auth_vk.txt";
+            string token = "";
+            try
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    sr.ReadLine();
+                    token = sr.ReadLine();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return token;
+        }
         private void button1_Click(object sender, EventArgs e)
         {   
             label1.Text = getAuthForGroup();
@@ -52,8 +70,31 @@ namespace WindowsFormsApp2
             {
                 AccessToken = getAuthForGroup()
             });
-
-
         }
-    }
+		private void button2_Click(object sender, EventArgs e)
+		{
+            var api_group = new VkApi();
+            api_group.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForGroup()
+            });
+			var api_user = new VkApi();
+			//api_user.Authorize(new ApiAuthParams
+			//{
+			//	AccessToken = getAuthForUser()
+			//});
+            var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
+            {
+                GroupId = "205658019",
+				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
+			});
+            int i = 1;
+            foreach (User user in getFollowers)
+            {
+                textBox1.Text += i.ToString();
+                i++;
+            }
+				//textBox1.Text = user.FirstName;
+        }
+	}
 }
