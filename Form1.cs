@@ -27,6 +27,7 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             string s1 = "O_o";
+            string s2 = "*-*";
         }
     }
 }
