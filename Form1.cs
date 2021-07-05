@@ -20,8 +20,7 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e)
         {
             //привет
-           
-
+           string k="DIMOOOOOOOON";
         }
 
         private void button1_Click(object sender, EventArgs e)
