@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VkNet;
 
 namespace WindowsFormsApp2
 {
@@ -19,15 +20,12 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //привет
-           string k="DIMOOOOOOOON";
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s1 = "O_o";
-            string s2 = "*-*";
-            string s3 = "-_-";
+            
         }
     }
 }
