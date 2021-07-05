@@ -73,5 +73,7 @@ namespace WindowsFormsApp2
             foreach (User user in getFollowers)
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + "\r\n";
         }
+
+
     }
 }
