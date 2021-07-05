@@ -91,5 +91,21 @@ namespace WindowsFormsApp2
             foreach (User user in getFollowers)
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + "\r\n";
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var api_p = new VkApi();
+            api_p.Authorize(new ApiAuthParams
+            {
+                AccessToken = "c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3"
+            });
+
+            var getFriends = api_p.Friends.Get(new VkNet.Model.RequestParams.FriendsGetParams
+            {
+                Fields = VkNet.Enums.Filters.ProfileFields.All
+            });
+            foreach (User user in getFriends)
+                textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + "\r\n";
+        }
     }
 }
