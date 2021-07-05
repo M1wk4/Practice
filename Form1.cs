@@ -27,6 +27,12 @@ namespace WindowsFormsApp2
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
         }
+        public void AuthData(string x, string y, string z)
+		{
+            TokenUser = x;
+            TokenGroup = y;
+            GroupId = z;
+		}
 
         //
         //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
