@@ -55,5 +55,23 @@ namespace WindowsFormsApp2
 
 
         }
+        
+        private void button2_Click(object sender, EventArgs e)
+
+        {
+            var api_group = new VkApi();
+            // обработать исключения!
+            api_group.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForGroup()
+            });
+            var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
+            {
+                GroupId = "205658019",
+                Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
+            });
+            foreach (User user in getFollowers)
+                textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName));
+        }
     }
 }
