@@ -110,6 +110,7 @@ namespace WindowsFormsApp2
 			this.button4.TabIndex = 7;
 			this.button4.Text = "Num 3";
 			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// Form1
 			// 
@@ -134,14 +135,14 @@ namespace WindowsFormsApp2
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button1;
+		public System.Windows.Forms.Label label1;
+		public System.Windows.Forms.TextBox textBox1;
+		public System.Windows.Forms.Button button2;
+		public System.Windows.Forms.Button button3;
+		public System.Windows.Forms.TextBox textBox2;
+		public System.Windows.Forms.TextBox textBox3;
+		public System.Windows.Forms.Button button4;
 	}
 }
 

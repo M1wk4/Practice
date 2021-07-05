@@ -105,5 +105,25 @@ namespace WindowsFormsApp2
 			foreach (User user in getFriends)
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + "\r\n";
         }
-    }
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+            var api_p = new VkApi();
+            api_p.Authorize(new ApiAuthParams
+            {
+                AccessToken = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00"   //Дмитрия
+            });
+            //var k = api_p.Wall.Get(new WallGetParams
+            //{
+            //    Fields = VkNet.Enums.Filters.NewsTypes.Post
+            //});
+			textBox3.Text= api_p.Wall.Get(new WallGetParams
+            {
+                Fields = VkNet.Enums.Filters.NewsTypes.Post
+            }).ToString();
+            //foreach (User user in k)
+            //	//textBox3.Text += k.ToString();
+            //             textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.k)) + "\r\n";
+        }
+	}
 }

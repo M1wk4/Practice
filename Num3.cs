@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
         }
         public void MemberPostList()
 		{
-            var k = FollowerList;
+            var _api = new VkApi();
 		}
         public void MemberRepost()
 		{
