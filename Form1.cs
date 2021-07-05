@@ -71,7 +71,7 @@ namespace WindowsFormsApp2
                 Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
             foreach (User user in getFollowers)
-                textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName));
+                textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + "\r\n";
         }
     }
 }
