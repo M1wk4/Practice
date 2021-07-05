@@ -19,6 +19,16 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e) { }
 
         //
+        //ВЫЗОВ ОКНА АВТОРИЗАЦИИ
+        //
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AuthForm f1 = new AuthForm();
+            f1.ShowDialog();
+        }
+
+        //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
         //
 
@@ -105,11 +115,7 @@ namespace WindowsFormsApp2
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
         }
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-            AuthForm f1 = new AuthForm();
-            f1.ShowDialog();
-		}
+
 	}
 }
 //c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3 Коля

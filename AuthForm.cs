@@ -17,7 +17,5 @@ namespace WindowsFormsApp2
 	{
 		public AuthForm() { InitializeComponent(); }
 		private void AuthForm_Load(object sender, EventArgs e) { }
-
-
 	}
 }
