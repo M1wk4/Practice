@@ -36,6 +36,7 @@ namespace WindowsFormsApp2
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -47,6 +48,7 @@ namespace WindowsFormsApp2
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.textBox1.Size = new System.Drawing.Size(243, 139);
 			this.textBox1.TabIndex = 2;
+			this.textBox1.Visible = false;
 			// 
 			// button2
 			// 
@@ -57,6 +59,7 @@ namespace WindowsFormsApp2
 			this.button2.TabIndex = 3;
 			this.button2.Text = "Вывод";
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Visible = false;
 			this.button2.Click += new System.EventHandler(this.GroupMemberList);
 			// 
 			// button3
@@ -68,6 +71,7 @@ namespace WindowsFormsApp2
 			this.button3.TabIndex = 5;
 			this.button3.Text = "Вывод";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Visible = false;
 			this.button3.Click += new System.EventHandler(this.FriendList);
 			// 
 			// textBox2
@@ -79,6 +83,7 @@ namespace WindowsFormsApp2
 			this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.textBox2.Size = new System.Drawing.Size(243, 203);
 			this.textBox2.TabIndex = 4;
+			this.textBox2.Visible = false;
 			// 
 			// label1
 			// 
@@ -89,6 +94,7 @@ namespace WindowsFormsApp2
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Список участников группы";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label1.Visible = false;
 			// 
 			// label2
 			// 
@@ -99,12 +105,24 @@ namespace WindowsFormsApp2
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Список друзей";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label2.Visible = false;
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(548, 214);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.InputData);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 561);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button3);
@@ -129,6 +147,7 @@ namespace WindowsFormsApp2
 		public System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

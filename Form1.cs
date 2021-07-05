@@ -15,8 +15,23 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public Form1(){InitializeComponent();}
-        private void Form1_Load(object sender, EventArgs e){}
+        public Form1() { InitializeComponent(); }
+        private void Form1_Load(object sender, EventArgs e) { }
+
+        //
+        //ВВОД ДАННЫХ
+        //
+
+        public void InputData(object sender, EventArgs e)
+		{
+            label1.Visible = true;
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            button1.Visible = true;
+            button2.Visible = true;
+        }
+
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
