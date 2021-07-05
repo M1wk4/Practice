@@ -18,6 +18,10 @@ namespace WindowsFormsApp2
         public Form1(){InitializeComponent();}
         private void Form1_Load(object sender, EventArgs e){}
 
+        //
+        //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
+        //
+
         public static string getAuthForGroup()
         {
             string fileName = @"auth_vk.txt";
@@ -36,6 +40,11 @@ namespace WindowsFormsApp2
             }
             return token;
         }
+
+        //
+        //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
+        //
+
         public static string getAuthForUser()
         {
             string fileName = @"auth_vk.txt";
@@ -54,23 +63,15 @@ namespace WindowsFormsApp2
             }
             return token;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {   
-            label1.Text = getAuthForGroup();
-            var api_group = new VkApi();
-            api_group.Authorize(new ApiAuthParams
-            {
-                AccessToken = getAuthForGroup()
-            });
-        }
 
-        //
-        //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
-        //
+		//
+		//СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
+		//
 
-        private void GroupMemberList(object sender, EventArgs e)
+		private void GroupMemberList(object sender, EventArgs e)
         {
-            var api_group = new VkApi();
+			textBox1.Text = "";
+			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
                 AccessToken = getAuthForGroup()
@@ -88,18 +89,19 @@ namespace WindowsFormsApp2
         //СПИСОК ДРУЗЕЙ
         //
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-			var api_p = new VkApi();
+		private void FriendList(object sender, EventArgs e)
+		{
+            textBox2.Text = "";
+            var api_p = new VkApi();
             api_p.Authorize(new ApiAuthParams
             {
                 AccessToken = getAuthForUser()
-			});
-			var getFriends = api_p.Friends.Get(new FriendsGetParams
-			{
-				Fields = VkNet.Enums.Filters.ProfileFields.All
-			});
-			foreach (User user in getFriends)
+            });
+            var getFriends = api_p.Friends.Get(new FriendsGetParams
+            {
+                Fields = VkNet.Enums.Filters.ProfileFields.All
+            });
+            foreach (User user in getFriends)
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
         }
 
