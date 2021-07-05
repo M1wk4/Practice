@@ -20,11 +20,13 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e)
         {
             //привет
+           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string s1 = "O_o";
         }
     }
 }
