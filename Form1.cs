@@ -27,6 +27,7 @@ namespace WindowsFormsApp2
         {
             string s1 = "O_o";
             string s2 = "*-*";
+            string s3 = "-_-";
         }
     }
 }
