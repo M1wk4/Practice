@@ -14,7 +14,6 @@ using VkNet.Enums.Filters;
 using System.IO;
 namespace WindowsFormsApp2
 {
-
     public partial class Form1 : Form
     {
         public Form1() { InitializeComponent(); }
@@ -46,7 +45,7 @@ namespace WindowsFormsApp2
             checkBox3.Enabled = true;
             textBox4.ReadOnly = false;
 
-            //Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
+            //      Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
 
 			//var api = new VkApi();
 			//api.Authorize(new ApiAuthParams
@@ -58,7 +57,7 @@ namespace WindowsFormsApp2
 
             label3.Text = $"Здравствуйте!";
 
-            //Попытка написания кода, который после логирования ставил в pictureBox1 аватарку ВК
+            //      Попытка написания кода, который после логирования ставил в pictureBox1 аватарку ВК
 
             //var UserPic = api.Photo.Get(new PhotoGetParams
             //{
@@ -148,16 +147,6 @@ namespace WindowsFormsApp2
                 sub.Add(Convert.ToString(user.Id));    
                 comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         //
