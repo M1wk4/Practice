@@ -13,6 +13,7 @@ using VkNet.Model.RequestParams;
 using System.IO;
 namespace WindowsFormsApp2
 {
+
     public partial class Form1 : Form
     {
         public Form1() { InitializeComponent(); }
@@ -23,24 +24,24 @@ namespace WindowsFormsApp2
         //
 
         string TokenUser, TokenGroup, GroupId;
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
-            TokenUser = "c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3";
-            TokenGroup = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98";
-            GroupId = "205658019";
+            AuthData();
         }
-  //      public void AuthData(string x, string y, string z)
-		//{
-  //          TokenUser = x;
-  //          TokenGroup = y;
-  //          GroupId = z;
-  //          MessageBox.Show($"{TokenUser}");
-  //          //button2.Enabled = true;
-  //          //button3.Enabled = true;
-  //          //label3.Text = "ddd";
-  //      }
+        public void AuthData()
+        {
+            
+            
+            TokenUser = Per.x;
+            TokenGroup = Per.y;
+            GroupId = Per.z;
+            MessageBox.Show($"{Per.x}");
+            //button2.Enabled = true;
+            //button3.Enabled = true;
+            //label3.Text = "ddd";
+        }
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
