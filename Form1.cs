@@ -35,7 +35,7 @@ namespace WindowsFormsApp2
             GroupId = z;
             button2.Enabled = true;
             button3.Enabled = true;
-            label3.Text = "dd";
+            label3.Text = "ddd";
         }
 
         //
