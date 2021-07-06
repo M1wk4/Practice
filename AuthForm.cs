@@ -16,10 +16,7 @@ namespace WindowsFormsApp2
 	
 	public partial class AuthForm : Form
 	{
-		public AuthForm() 
-		{ 
-			InitializeComponent(); 
-		}
+		public AuthForm() { InitializeComponent(); }
 		private void AuthForm_Load(object sender, EventArgs e) { }
 
 		//
@@ -28,19 +25,10 @@ namespace WindowsFormsApp2
 		
 		public void AuthAccept(object sender, EventArgs e)
 		{
-			textBox1.Text = "acb47053aafd4368e034580c21a3dc7673bc965ad4424d98f73f8742a6d29df16d74a4357927e21366bd7";
-
-
-
 			Per.x = textBox1.Text;
 			Per.y = textBox2.Text;
 			Per.z = textBox3.Text;
-			this.Hide();
+			this.Close();
 		}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-		
-        }
     }
 }
