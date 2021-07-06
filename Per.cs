@@ -12,5 +12,7 @@ namespace WindowsFormsApp2
         public static string x;
         public static string y;
         public static string z;
+        public static List<string> mem;
+        
     }
 }

@@ -93,10 +93,11 @@ namespace WindowsFormsApp2
             textBox3.Text += Convert.ToString(p.Id) + "\r\n";
             textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
             textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
-			//textBox1.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.Status));
-			//textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
-			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
-		}
+            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
+            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
+            UserPost f = new UserPost();
+            f.Show();
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -126,8 +127,10 @@ namespace WindowsFormsApp2
             {
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
                 sub.Add(Convert.ToString(user.Id));
+                
                 comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
             }
+            Per.mem = sub;
         }
 
         //
