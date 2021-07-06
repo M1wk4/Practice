@@ -48,6 +48,7 @@ namespace WindowsFormsApp2
 
 			var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
 
+			
 			//wall302292451_919
 			//- 205658019)
 
@@ -77,12 +78,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-			List<string> memb = new List<string>();
-			memb = Per.mem;
-			foreach(string i in memb)
-            {
-				textBox1.Text += memb;
-            }
+		
 
         }
     }
