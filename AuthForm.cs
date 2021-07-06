@@ -16,13 +16,13 @@ namespace WindowsFormsApp2
 	
 	public partial class AuthForm : Form
 	{
-		public AuthForm() { InitializeComponent(); }
+		public AuthForm() { InitializeComponent(); //this.ControlBox = false; 
+		}
 		private void AuthForm_Load(object sender, EventArgs e) { }
 
 		//
 		//ПОДТВЕРЖДЕНИЕ И ВЫХОД ИЗ ОКНА АВТОРИЗАЦИИ
 		//
-		
 		public void AuthAccept(object sender, EventArgs e)
 		{
 			if ((textBox1.Text.Length == 0)|| (textBox2.Text.Length == 0) ||(textBox3.Text.Length == 0))
@@ -35,10 +35,5 @@ namespace WindowsFormsApp2
 			Per.z = textBox3.Text;
 			this.Close();
 		}
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

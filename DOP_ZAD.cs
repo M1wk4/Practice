@@ -10,50 +10,23 @@ using System.Windows.Forms;
 using VkNet;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
-
 namespace WindowsFormsApp2
 {
     public partial class DOP_ZAD : Form
     {
-        public DOP_ZAD()
-        {
-            InitializeComponent();
-        }
+        public DOP_ZAD() { InitializeComponent(); }
+        private void DOP_ZAD_Load(object sender, EventArgs e) { }
 
-
-        private void DOP_ZAD_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         string TokenGroup, TokenUser, GroupId;
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-            
-            
-        }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label1.Text = Convert.ToString(trackBar1.Value);
         }
-
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             label2.Text = Convert.ToString(trackBar2.Value);
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
