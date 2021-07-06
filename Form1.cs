@@ -38,6 +38,7 @@ namespace WindowsFormsApp2
             GroupId = Per.z;
 			button2.Enabled = true;
 			button3.Enabled = true;
+            button4.Enabled = true;
 		}
 
         //
@@ -91,8 +92,8 @@ namespace WindowsFormsApp2
             textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
             //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
             //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
-            UserPost f = new UserPost();
-            f.Show();
+            //UserPost f = new UserPost();
+            //f.Show();
         }
 
         //
@@ -109,8 +110,6 @@ namespace WindowsFormsApp2
 
 		private void GroupMemberList(object sender, EventArgs e)
         {
-
-            MessageBox.Show($"{TokenUser}");
             textBox1.Text = "";
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams

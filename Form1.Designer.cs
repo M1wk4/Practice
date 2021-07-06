@@ -148,14 +148,16 @@ namespace WindowsFormsApp2
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(255, 62);
+			this.comboBox1.Location = new System.Drawing.Point(382, 62);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
+			this.comboBox1.Size = new System.Drawing.Size(222, 21);
 			this.comboBox1.TabIndex = 12;
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(382, 207);
+			this.button4.Enabled = false;
+			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.button4.Location = new System.Drawing.Point(382, 234);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(222, 27);
 			this.button4.TabIndex = 13;
@@ -166,7 +168,7 @@ namespace WindowsFormsApp2
 			// textBox3
 			// 
 			this.textBox3.BackColor = System.Drawing.Color.White;
-			this.textBox3.Location = new System.Drawing.Point(382, 62);
+			this.textBox3.Location = new System.Drawing.Point(382, 89);
 			this.textBox3.Multiline = true;
 			this.textBox3.Name = "textBox3";
 			this.textBox3.ReadOnly = true;
@@ -176,7 +178,7 @@ namespace WindowsFormsApp2
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(149, 314);
+			this.button5.Location = new System.Drawing.Point(231, 62);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(75, 23);
 			this.button5.TabIndex = 15;
