@@ -64,5 +64,21 @@ namespace WindowsFormsApp2
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
 		}
-	}
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+			
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			List<string> memb = new List<string>();
+			memb = Per.mem;
+			foreach(string i in memb)
+            {
+				textBox1.Text += memb;
+            }
+
+        }
+    }
 }
