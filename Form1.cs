@@ -33,7 +33,9 @@ namespace WindowsFormsApp2
             TokenUser = x;
             TokenGroup = y;
             GroupId = z;
-		}
+            button2.Enabled = true;
+            button3.Enabled = true;
+        }
 
         //
         //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -63,17 +65,18 @@ namespace WindowsFormsApp2
         //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
 
-        public static string getAuthForUser()
+        public string getAuthForUser()
         {
             string fileName = @"auth_vk.txt";
             string token = "";
             try
             {
-                using (StreamReader sr = new StreamReader(fileName))
-                {
-                    sr.ReadLine();
-                    token = sr.ReadLine();
-                }
+                //using (StreamReader sr = new StreamReader(fileName))
+                //{
+                //    sr.ReadLine();
+                //    token = sr.ReadLine();
+                //}
+                token = TokenUser;
             }
             catch (Exception e)
             {
@@ -92,9 +95,9 @@ namespace WindowsFormsApp2
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
-				//AccessToken = getAuthForGroup() //(out of date)
+				AccessToken = getAuthForGroup() //(out of date)
 
-				AccessToken = TokenGroup
+				//AccessToken = TokenGroup
 			});
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
@@ -117,7 +120,8 @@ namespace WindowsFormsApp2
             var api_p = new VkApi();
             api_p.Authorize(new ApiAuthParams
             {
-                AccessToken = TokenUser
+                AccessToken = getAuthForUser()
+                //AccessToken = TokenUser
             });
             var getFriends = api_p.Friends.Get(new FriendsGetParams
             {
