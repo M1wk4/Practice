@@ -41,18 +41,17 @@ namespace WindowsFormsApp2
 			checkBox3.Enabled = true;
 			checkBox4.Enabled = true;
 			textBox4.ReadOnly = false;
-
-			//      Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
-
-			//var api = new VkApi();
-			//api.Authorize(new ApiAuthParams
-			//{
-			//AccessToken = getAuthForGroup()
-			//});
-			//var UserName = api.Users.Get(new long[] {302292451}).FirstOrDefault();
+			var api = new VkApi();
+			api.Authorize(new ApiAuthParams
+			{
+				//AccessToken = getAuthForGroup()
+				AccessToken = getAuthForUser()
+			});
+			MessageBox.Show(api.UserId.Value.ToString());
+			//var UserName = api.Users.Get(new long[] { Convert.ToInt64(api.UserId.Value) }).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
 
-			label3.Text = $"Здравствуйте!";
+			//label3.Text = $"Здравствуйте!";
 
 			//      Попытка написания кода, который после логирования ставил в pictureBox1 аватарку ВК
 
