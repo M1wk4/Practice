@@ -25,7 +25,10 @@ namespace WindowsFormsApp2
 		private void AuthAccept(object sender, EventArgs e)
 		{
 			Form1 f1 = new Form1();
-			f1.AuthData(textBox1.Text, textBox2.Text, textBox3.Text);
+			f1.TokenUser = textBox1.Text;
+			f1.TokenGroup = textBox2.Text;
+			f1.GroupId = textBox3.Text;
+			//f1.AuthData(textBox1.Text, textBox2.Text, textBox3.Text);
 			this.Close();
 		}
 	}

@@ -22,25 +22,25 @@ namespace WindowsFormsApp2
         //ВЫЗОВ ОКНА АВТОРИЗАЦИИ
         //
 
-        string TokenUser, TokenGroup, GroupId;
+        public string TokenUser, TokenGroup, GroupId;
         private void button1_Click(object sender, EventArgs e)
         {
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
-            TokenUser = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00";
-            TokenGroup = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98";
-            GroupId = "205658019";
+			//TokenUser = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00";
+   //         TokenGroup = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98";
+   //         GroupId = "205658019";
         }
         public void AuthData(string x, string y, string z)
 		{
-            TokenUser = x;
-            TokenGroup = y;
-            GroupId = z;
-            //MessageBox.Show($"{TokenUser}");
-            //button2.Enabled = true;
-            //button3.Enabled = true;
-            //label3.Text = "ddd";
-        }
+   //         TokenUser = x;
+   //         TokenGroup = y;
+   //         GroupId = z;
+			//MessageBox.Show($"{TokenUser}");
+			//button2.Enabled = true;
+			//button3.Enabled = true;
+			//label3.Text = "ddd";
+		}
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -84,7 +84,7 @@ namespace WindowsFormsApp2
 
 		private void GroupMemberList(object sender, EventArgs e)
         {
-            MessageBox.Show($"{TokenUser}");
+            MessageBox.Show("{}");
             textBox1.Text = "";
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
@@ -93,7 +93,6 @@ namespace WindowsFormsApp2
             });
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
-				//GroupId = "205658019",
 				GroupId = GroupId,
 				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
