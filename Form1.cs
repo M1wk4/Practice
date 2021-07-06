@@ -27,6 +27,9 @@ namespace WindowsFormsApp2
         {
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
+            TokenUser = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00";
+            TokenGroup = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98";
+            GroupId = "205658019";
         }
         public void AuthData(string x, string y, string z)
 		{
@@ -58,7 +61,7 @@ namespace WindowsFormsApp2
         }
 
         //
-        //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
+        //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
 
         public string getAuthForUser()
@@ -85,12 +88,12 @@ namespace WindowsFormsApp2
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
-				AccessToken = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98"
+                AccessToken = getAuthForGroup()
             });
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
-				GroupId = "205658019",
-				//GroupId = GroupId,
+				//GroupId = "205658019",
+				GroupId = GroupId,
 				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
             foreach (User user in getFollowers)
