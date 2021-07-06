@@ -63,7 +63,57 @@ namespace WindowsFormsApp2
             TokenGroup = Per.y;
             GroupId = Per.z;      
         }
-       
+
+        List<string> birth = new List<string>();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            var api_p = new VkApi();
+            api_p.Authorize(new ApiAuthParams
+            {
+                AccessToken = Per.x
+            });
+            var getFriends = api_p.Friends.Get(new FriendsGetParams
+            {
+                Fields = VkNet.Enums.Filters.ProfileFields.All
+            });
+            foreach (User user in getFriends) 
+                birth.Add(user.BirthDate);
+            //textBox1.Text += user.BirthDate + "\r\n";
+            int cout;
+            string year;
+            int year_n, year_cout;
+            year_cout = 0;
+            year_n = 0;
+            foreach (string us in birth)
+            {
+                if (us != null)
+                {
+                    year = "";
+                    cout = 0;
+                    for (int i = 0; i < us.Length; i++)
+                    {
+                        if (us[i] == '.')
+                        {
+                            cout++;
+                        }
+                        if (cout == 2 && us[i] != '.')
+                        {
+                            year += us[i];
+                        }
+                    }
+                    if (cout == 2 && int.Parse(year) > 1950)
+                    {
+                        year_n += int.Parse(year);
+                        year_cout++;
+                        textBox2.Text += year + " " + year_cout + "\r\n";
+                    }
+                }
+            }
+            double answ = 2021 - (year_n / year_cout);
+            textBox2.Text += "Приблизительный возраст пользователя равен" + answ;
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime d = monthCalendar1.SelectionRange.Start;
@@ -91,5 +141,6 @@ namespace WindowsFormsApp2
            
 
         }
+        
     }
 }
