@@ -107,7 +107,14 @@ namespace WindowsFormsApp2
         //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
         //
         List<string> sub = new List<string>();
-        private void GroupMemberList(object sender, EventArgs e)
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+            UserPost UP = new UserPost();
+            UP.k();
+		}
+
+		private void GroupMemberList(object sender, EventArgs e)
         {
 
             MessageBox.Show($"{TokenUser}");
@@ -126,7 +133,7 @@ namespace WindowsFormsApp2
             foreach (User user in getFollowers)
             {
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
-                sub.Add(Convert.ToString(user.Id));
+                sub.Add(Convert.ToString(getFollowers[0]));
                 
                 comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
             }

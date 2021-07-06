@@ -30,28 +30,28 @@ namespace WindowsFormsApp2
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
-				AccessToken = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00"
+				AccessToken = "b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c48fea"
 			});
 			//var p = api.Users.Get(new long[] { 1 }).FirstOrDefault();
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)));
 
 
-			//var post = api.Wall.Post(new WallPostParams
-			//{
-			//	OwnerId = -205658019,
-			//	FriendsOnly = false,
-			//	FromGroup = false,
-			//	Message = "ХУZ",
-			//	Signed = true,
-			//});
-			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
-
 			var post = api.Wall.Post(new WallPostParams
 			{
-				OwnerId = 302292451,
-				Message = "k",
+				OwnerId = -205658019,
+				FriendsOnly = false,
+				FromGroup = false,
+				Message = "ХУZ",
+				Signed = true,
 			});
 			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
+
+			//var post = api.Wall.Post(new WallPostParams
+			//{
+			//	OwnerId = 302292451,
+			//	Message = "k",
+			//});
+			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
 
 			//var post2 = api.Wall.Post(new WallPostParams
 			//{
