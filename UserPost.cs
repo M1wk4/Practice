@@ -46,6 +46,11 @@ namespace WindowsFormsApp2
 			});
 			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
 
+			var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
+
+			//wall302292451_919
+			//- 205658019)
+
 			//var post = api.Wall.Post(new WallPostParams
 			//{
 			//	OwnerId = 302292451,
