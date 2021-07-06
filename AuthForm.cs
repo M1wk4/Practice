@@ -13,19 +13,28 @@ using VkNet.Model.RequestParams;
 using System.IO;
 namespace WindowsFormsApp2
 {
+	
 	public partial class AuthForm : Form
 	{
-		public AuthForm() { InitializeComponent(); }
+		public AuthForm() 
+		{ 
+			InitializeComponent(); 
+		}
 		private void AuthForm_Load(object sender, EventArgs e) { }
 
 		//
 		//ПОДТВЕРЖДЕНИЕ И ВЫХОД ИЗ ОКНА АВТОРИЗАЦИИ
 		//
+
 		public void AuthAccept(object sender, EventArgs e)
 		{
-			Form1 f1 = new Form1();
+		   
 			
-			this.Close();
+			Per.x = textBox1.Text;
+			Per.y = textBox2.Text;
+			Per.z = textBox3.Text;
+			this.Hide();
 		}
+		
 	}
 }
