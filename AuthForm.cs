@@ -35,5 +35,10 @@ namespace WindowsFormsApp2
 			Per.z = textBox3.Text;
 			this.Close();
 		}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

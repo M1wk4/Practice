@@ -150,6 +150,11 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //
         //СПИСОК ДРУЗЕЙ
         //
@@ -167,6 +172,8 @@ namespace WindowsFormsApp2
             });
             foreach (User user in getFriends)
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
+            DOP_ZAD f = new DOP_ZAD();
+            f.Show();
         }
 
         //
