@@ -27,20 +27,20 @@ namespace WindowsFormsApp2
         {
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
-            TokenUser = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00";
+            TokenUser = "c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3";
             TokenGroup = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98";
             GroupId = "205658019";
         }
-        public void AuthData(string x, string y, string z)
-		{
-            TokenUser = x;
-            TokenGroup = y;
-            GroupId = z;
-            //MessageBox.Show($"{TokenUser}");
-            //button2.Enabled = true;
-            //button3.Enabled = true;
-            //label3.Text = "ddd";
-        }
+  //      public void AuthData(string x, string y, string z)
+		//{
+  //          TokenUser = x;
+  //          TokenGroup = y;
+  //          GroupId = z;
+  //          MessageBox.Show($"{TokenUser}");
+  //          //button2.Enabled = true;
+  //          //button3.Enabled = true;
+  //          //label3.Text = "ddd";
+  //      }
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -78,11 +78,16 @@ namespace WindowsFormsApp2
             return token;
         }
 
-		//
-		//СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
-		//
+        private void button4_Click(object sender, EventArgs e)
+        {
 
-		private void GroupMemberList(object sender, EventArgs e)
+        }
+
+        //
+        //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
+        //
+        //List<string> sub = new List<string>();
+        private void GroupMemberList(object sender, EventArgs e)
         {
             MessageBox.Show($"{TokenUser}");
             textBox1.Text = "";
@@ -98,7 +103,11 @@ namespace WindowsFormsApp2
 				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
             foreach (User user in getFollowers)
+            {
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
+                //sub.Add((Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)));
+                comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
+            }
         }
 
         //
