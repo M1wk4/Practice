@@ -48,8 +48,18 @@ namespace WindowsFormsApp2
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBox4 = new System.Windows.Forms.CheckBox();
+			this.trackBar1 = new System.Windows.Forms.TrackBar();
+			this.trackBar2 = new System.Windows.Forms.TrackBar();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -60,14 +70,14 @@ namespace WindowsFormsApp2
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ReadOnly = true;
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(247, 214);
+			this.textBox1.Size = new System.Drawing.Size(247, 150);
 			this.textBox1.TabIndex = 2;
 			// 
 			// button2
 			// 
 			this.button2.Enabled = false;
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button2.Location = new System.Drawing.Point(625, 281);
+			this.button2.Location = new System.Drawing.Point(625, 216);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(247, 27);
 			this.button2.TabIndex = 3;
@@ -79,7 +89,7 @@ namespace WindowsFormsApp2
 			// 
 			this.button3.Enabled = false;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button3.Location = new System.Drawing.Point(625, 314);
+			this.button3.Location = new System.Drawing.Point(625, 249);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(247, 27);
 			this.button3.TabIndex = 5;
@@ -131,18 +141,18 @@ namespace WindowsFormsApp2
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(12, 350);
+			this.comboBox1.Location = new System.Drawing.Point(625, 350);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(222, 21);
+			this.comboBox1.Size = new System.Drawing.Size(247, 21);
 			this.comboBox1.TabIndex = 12;
 			// 
 			// button4
 			// 
 			this.button4.Enabled = false;
 			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button4.Location = new System.Drawing.Point(12, 522);
+			this.button4.Location = new System.Drawing.Point(625, 522);
 			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(222, 27);
+			this.button4.Size = new System.Drawing.Size(247, 27);
 			this.button4.TabIndex = 13;
 			this.button4.Text = "Вывод";
 			this.button4.UseVisualStyleBackColor = true;
@@ -151,12 +161,12 @@ namespace WindowsFormsApp2
 			// textBox3
 			// 
 			this.textBox3.BackColor = System.Drawing.Color.White;
-			this.textBox3.Location = new System.Drawing.Point(12, 377);
+			this.textBox3.Location = new System.Drawing.Point(625, 377);
 			this.textBox3.Multiline = true;
 			this.textBox3.Name = "textBox3";
 			this.textBox3.ReadOnly = true;
 			this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox3.Size = new System.Drawing.Size(222, 139);
+			this.textBox3.Size = new System.Drawing.Size(247, 139);
 			this.textBox3.TabIndex = 14;
 			// 
 			// button5
@@ -176,9 +186,9 @@ namespace WindowsFormsApp2
 			this.label4.BackColor = System.Drawing.SystemColors.Control;
 			this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label4.Location = new System.Drawing.Point(12, 294);
+			this.label4.Location = new System.Drawing.Point(625, 297);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(222, 50);
+			this.label4.Size = new System.Drawing.Size(247, 50);
 			this.label4.TabIndex = 16;
 			this.label4.Text = "Вывести информацию о пользователе";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,9 +209,9 @@ namespace WindowsFormsApp2
 			this.label5.BackColor = System.Drawing.SystemColors.Control;
 			this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label5.Location = new System.Drawing.Point(228, 9);
+			this.label5.Location = new System.Drawing.Point(174, 9);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(378, 50);
+			this.label5.Size = new System.Drawing.Size(432, 50);
 			this.label5.TabIndex = 18;
 			this.label5.Text = "Написать пост";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,7 +221,7 @@ namespace WindowsFormsApp2
 			this.checkBox1.AutoSize = true;
 			this.checkBox1.Enabled = false;
 			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(6, 19);
+			this.checkBox1.Location = new System.Drawing.Point(228, 64);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(155, 17);
 			this.checkBox1.TabIndex = 19;
@@ -221,21 +231,26 @@ namespace WindowsFormsApp2
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-			this.groupBox1.Controls.Add(this.checkBox3);
-			this.groupBox1.Controls.Add(this.checkBox2);
-			this.groupBox1.Controls.Add(this.checkBox1);
-			this.groupBox1.Location = new System.Drawing.Point(222, 62);
+			this.groupBox1.Controls.Add(this.monthCalendar1);
+			this.groupBox1.Controls.Add(this.label8);
+			this.groupBox1.Controls.Add(this.label7);
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.trackBar2);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.trackBar1);
+			this.groupBox1.Location = new System.Drawing.Point(168, 156);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(160, 181);
+			this.groupBox1.Size = new System.Drawing.Size(215, 280);
 			this.groupBox1.TabIndex = 20;
 			this.groupBox1.TabStop = false;
+			this.groupBox1.Visible = false;
 			// 
 			// checkBox3
 			// 
 			this.checkBox3.AutoSize = true;
 			this.checkBox3.Enabled = false;
 			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox3.Location = new System.Drawing.Point(6, 65);
+			this.checkBox3.Location = new System.Drawing.Point(228, 110);
 			this.checkBox3.Name = "checkBox3";
 			this.checkBox3.Size = new System.Drawing.Size(128, 17);
 			this.checkBox3.TabIndex = 21;
@@ -247,12 +262,97 @@ namespace WindowsFormsApp2
 			this.checkBox2.AutoSize = true;
 			this.checkBox2.Enabled = false;
 			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox2.Location = new System.Drawing.Point(6, 42);
+			this.checkBox2.Location = new System.Drawing.Point(228, 87);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(139, 17);
 			this.checkBox2.TabIndex = 20;
 			this.checkBox2.Text = "Только для друзей";
 			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// checkBox4
+			// 
+			this.checkBox4.AutoSize = true;
+			this.checkBox4.Enabled = false;
+			this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox4.Location = new System.Drawing.Point(228, 133);
+			this.checkBox4.Name = "checkBox4";
+			this.checkBox4.Size = new System.Drawing.Size(84, 17);
+			this.checkBox4.TabIndex = 22;
+			this.checkBox4.Text = "Отложить";
+			this.checkBox4.UseVisualStyleBackColor = true;
+			this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+			// 
+			// trackBar1
+			// 
+			this.trackBar1.Location = new System.Drawing.Point(105, 11);
+			this.trackBar1.Maximum = 23;
+			this.trackBar1.Name = "trackBar1";
+			this.trackBar1.Size = new System.Drawing.Size(104, 45);
+			this.trackBar1.TabIndex = 23;
+			this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+			// 
+			// trackBar2
+			// 
+			this.trackBar2.Location = new System.Drawing.Point(105, 62);
+			this.trackBar2.Maximum = 59;
+			this.trackBar2.Name = "trackBar2";
+			this.trackBar2.Size = new System.Drawing.Size(104, 45);
+			this.trackBar2.TabIndex = 24;
+			this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+			// 
+			// label2
+			// 
+			this.label2.BackColor = System.Drawing.SystemColors.Control;
+			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Location = new System.Drawing.Point(6, 11);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(91, 23);
+			this.label2.TabIndex = 23;
+			this.label2.Text = "Часы";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label6
+			// 
+			this.label6.BackColor = System.Drawing.SystemColors.Control;
+			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label6.Location = new System.Drawing.Point(6, 62);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(91, 23);
+			this.label6.TabIndex = 24;
+			this.label6.Text = "Минуты";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label7
+			// 
+			this.label7.BackColor = System.Drawing.SystemColors.Control;
+			this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label7.Location = new System.Drawing.Point(6, 34);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(91, 23);
+			this.label7.TabIndex = 25;
+			this.label7.Text = "0";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label8
+			// 
+			this.label8.BackColor = System.Drawing.SystemColors.Control;
+			this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.Location = new System.Drawing.Point(6, 85);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(91, 23);
+			this.label8.TabIndex = 26;
+			this.label8.Text = "0";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// monthCalendar1
+			// 
+			this.monthCalendar1.Location = new System.Drawing.Point(6, 111);
+			this.monthCalendar1.Name = "monthCalendar1";
+			this.monthCalendar1.TabIndex = 23;
 			// 
 			// Form1
 			// 
@@ -260,9 +360,13 @@ namespace WindowsFormsApp2
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 561);
+			this.Controls.Add(this.checkBox4);
 			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.checkBox3);
 			this.Controls.Add(this.label5);
+			this.Controls.Add(this.checkBox2);
 			this.Controls.Add(this.textBox4);
+			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.textBox3);
@@ -284,6 +388,8 @@ namespace WindowsFormsApp2
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -308,6 +414,14 @@ namespace WindowsFormsApp2
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.CheckBox checkBox3;
+		private System.Windows.Forms.CheckBox checkBox4;
+		private System.Windows.Forms.TrackBar trackBar2;
+		private System.Windows.Forms.TrackBar trackBar1;
+		public System.Windows.Forms.Label label2;
+		public System.Windows.Forms.Label label8;
+		public System.Windows.Forms.Label label7;
+		public System.Windows.Forms.Label label6;
+		private System.Windows.Forms.MonthCalendar monthCalendar1;
 	}
 }
 

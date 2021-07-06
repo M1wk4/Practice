@@ -39,6 +39,7 @@ namespace WindowsFormsApp2
 			checkBox1.Enabled = true;
 			checkBox2.Enabled = true;
 			checkBox3.Enabled = true;
+			checkBox4.Enabled = true;
 			textBox4.ReadOnly = false;
 
 			//      Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
@@ -145,6 +146,19 @@ namespace WindowsFormsApp2
 			}
 		}
 
+		private void checkBox4_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox1.Visible = checkBox4.Checked;
+		}
+		private void trackBar1_Scroll(object sender, EventArgs e)
+		{
+			label7.Text = trackBar1.Value.ToString();
+		}
+		private void trackBar2_Scroll(object sender, EventArgs e)
+		{
+			label8.Text = trackBar2.Value.ToString();
+		}
+
 		//
 		//СПИСОК ДРУЗЕЙ
 		//
@@ -168,8 +182,8 @@ namespace WindowsFormsApp2
 				sub.Add(Convert.ToString(user.Id));
 				comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
 			}
-			//DOP_ZAD f = new DOP_ZAD();
-			//f.Show();
+			DOP_ZAD f = new DOP_ZAD();
+			f.Show();
 		}
 
 		//
