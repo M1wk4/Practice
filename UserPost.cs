@@ -32,8 +32,8 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = "be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00"
 			});
-			var p = api.Users.Get(new long[] { 1 }).FirstOrDefault();
-			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)));
+			//var p = api.Users.Get(new long[] { 1 }).FirstOrDefault();
+			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)));
 
 
 			//var post = api.Wall.Post(new WallPostParams
@@ -53,13 +53,13 @@ namespace WindowsFormsApp2
 			});
 			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
 
-			var post2 = api.Wall.Post(new WallPostParams
-			{
+			//var post2 = api.Wall.Post(new WallPostParams
+			//{
 
-				OwnerId = -205658019,
-				PostId = 2,
-				Message = "Хыыыы"
-			});
+			//	OwnerId = -205658019,
+			//	PostId = 2,
+			//	Message = "Хыыыы"
+			//});
 			//var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
 			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
