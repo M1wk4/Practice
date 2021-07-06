@@ -89,8 +89,13 @@ namespace WindowsFormsApp2
             });
             
             var p = api_p.Users.Get(new long[] {Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
-            textBox1.Text = Convert.ToString(p.Id);
-            textBox1.Text = Convert.ToString(p.Id);
+            textBox3.Text = "";
+            textBox3.Text += Convert.ToString(p.Id) + "\r\n";
+            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
+            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
+            //textBox1.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.Status));
+            //textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
+            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
