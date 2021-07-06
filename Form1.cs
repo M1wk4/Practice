@@ -133,11 +133,9 @@ namespace WindowsFormsApp2
             foreach (User user in getFollowers)
             {
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
-                sub.Add(Convert.ToString(getFollowers[0]));
-                
+                sub.Add(Convert.ToString(user.Id));    
                 comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
             }
-            Per.mem = sub;
         }
 
         //
