@@ -25,6 +25,11 @@ namespace WindowsFormsApp2
 		
 		public void AuthAccept(object sender, EventArgs e)
 		{
+			if ((textBox1.Text.Length == 0)|| (textBox2.Text.Length == 0) ||(textBox3.Text.Length == 0))
+			{
+				MessageBox.Show("Не все данные введены!");
+				return;
+			}
 			Per.x = textBox1.Text;
 			Per.y = textBox2.Text;
 			Per.z = textBox3.Text;

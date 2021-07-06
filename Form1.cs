@@ -42,13 +42,20 @@ namespace WindowsFormsApp2
             button4.Enabled = true;
             button5.Enabled = true;
             textBox4.ReadOnly = false;
-            label3.Text = $"Здравствуйте, {}!";
+            var api = new VkApi();
+            api.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForGroup()
+            });
+            //var UserName = api.Users.Get(new long[] {302292451}).FirstOrDefault();
+            //label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
+
+            //var UserName = api.Users.Get(userIds: 302292451,fields);
         }
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
         //
-
         public string getAuthForGroup()
         {
             string token = "";
@@ -66,7 +73,6 @@ namespace WindowsFormsApp2
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
-
         public string getAuthForUser()
         {
             string token = "";
@@ -84,10 +90,8 @@ namespace WindowsFormsApp2
         //
         //ВЫВОД ИНФОРМАЦИИ О ТЕКУЩЕМ ПОЛЬЗОВАТЕЛЕ (опять сломалось)
         //
-
         private void getUserInfo(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
 			var api_p = new VkApi();
 			api_p.Authorize(new ApiAuthParams
 			{
@@ -132,7 +136,6 @@ namespace WindowsFormsApp2
         //
         //СПИСОК ДРУЗЕЙ
         //
-        
         private void FriendList(object sender, EventArgs e)
 		{
             textBox2.Text = "";
@@ -203,3 +206,25 @@ namespace WindowsFormsApp2
 //be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00 Дмитрий
 //b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c48fea Новый Дмитрий
 //12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98 Группа
+
+//var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
+//wall302292451_919
+//- 205658019)
+
+//var post = api.Wall.Post(new WallPostParams
+//{
+//	OwnerId = 302292451,
+//	Message = "k",
+//});
+//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
+
+//var post2 = api.Wall.Post(new WallPostParams
+//{
+
+//	OwnerId = -205658019,
+//	PostId = 2,
+//	Message = "Хыыыы"
+//});
+//var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
+//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
+//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));

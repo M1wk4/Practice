@@ -180,6 +180,7 @@ namespace WindowsFormsApp2
 			// 
 			// button5
 			// 
+			this.button5.Enabled = false;
 			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.button5.Location = new System.Drawing.Point(370, 204);
 			this.button5.Name = "button5";
