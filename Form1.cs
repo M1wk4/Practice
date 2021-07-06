@@ -42,7 +42,7 @@ namespace WindowsFormsApp2
             button4.Enabled = true;
             button5.Enabled = true;
             textBox4.ReadOnly = false;
-            label3.Text = $"Здравствуйте, {}!";
+            label3.Text = $"Здравствуйте, {TokenGroup}!";
         }
 
         //
@@ -87,7 +87,7 @@ namespace WindowsFormsApp2
 
         private void getUserInfo(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
+            
 			var api_p = new VkApi();
 			api_p.Authorize(new ApiAuthParams
 			{
@@ -129,10 +129,15 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //
         //СПИСОК ДРУЗЕЙ
         //
-        
+
         private void FriendList(object sender, EventArgs e)
 		{
             textBox2.Text = "";
@@ -147,6 +152,8 @@ namespace WindowsFormsApp2
             });
             foreach (User user in getFriends)
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
+            DOP_ZAD f = new DOP_ZAD();
+            f.Show();
         }
 
         //

@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
-				AccessToken = "b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c48fea"
+				AccessToken = "e240830f3e8e8eae25787506858a898893308c0c36a3a57c4ced7fe36432940522ca8e1483cc5fa633bd3"
 			});
 			//var p = api.Users.Get(new long[] { 1 }).FirstOrDefault();
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)));
@@ -41,12 +41,13 @@ namespace WindowsFormsApp2
 				OwnerId = -205658019,
 				FriendsOnly = false,
 				FromGroup = false,
-				Message = "ХУZ",
+				Message = "ЛОЛ",
 				Signed = true,
+				
 			});
 			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
 
-			var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
+			
 
 			
 			//wall302292451_919

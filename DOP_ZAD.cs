@@ -31,6 +31,29 @@ namespace WindowsFormsApp2
 
         }
         string TokenGroup, TokenUser, GroupId;
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+            
+            
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            label1.Text = Convert.ToString(trackBar1.Value);
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            label2.Text = Convert.ToString(trackBar2.Value);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ПОЛЬЗОВАТЕЛЯ
         //
@@ -43,6 +66,8 @@ namespace WindowsFormsApp2
        
         private void button1_Click(object sender, EventArgs e)
         {
+            DateTime d = monthCalendar1.SelectionRange.Start;
+            DateTime f = new DateTime(d.Year, d.Month, d.Day, trackBar1.Value, trackBar2.Value, 0);
             AuthData();
             var api_p = new VkApi();
             api_p.Authorize(new ApiAuthParams
@@ -52,20 +77,18 @@ namespace WindowsFormsApp2
             var api = new VkApi();
             api.Authorize(new ApiAuthParams
             {
-                AccessToken = "e240830f3e8e8eae25787506858a898893308c0c36a3a57c4ced7fe36432940522ca8e1483cc5fa633bd3"
-            });
-            int unixTime = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-            textBox1.Text = Convert.ToString(unixTime);
+                AccessToken = Per.x
+            }) ;
             var post = api.Wall.Post(new WallPostParams
             {
                 OwnerId = -205658019,
                 FriendsOnly = false,
                 FromGroup = false,
-                Message = "ЛОЛ",
+                Message = textBox1.Text,
                 Signed = true,
-                PublishDate = new DateTime(,
-            }); 
-            
+                PublishDate = f,
+            });
+           
 
         }
     }
