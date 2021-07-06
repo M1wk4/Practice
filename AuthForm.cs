@@ -28,19 +28,11 @@ namespace WindowsFormsApp2
 		
 		public void AuthAccept(object sender, EventArgs e)
 		{
-			textBox1.Text = "a63681bbd9958a69dfa657420be5cd2214f5545d88a0e6e15308db11f8e101c8305f75a35a1be4c08b585";
-
-
-
+			//textBox1.Text = "a63681bbd9958a69dfa657420be5cd2214f5545d88a0e6e15308db11f8e101c8305f75a35a1be4c08b585";
 			Per.x = textBox1.Text;
 			Per.y = textBox2.Text;
 			Per.z = textBox3.Text;
 			this.Hide();
 		}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-		
-        }
     }
 }

@@ -33,16 +33,12 @@ namespace WindowsFormsApp2
         }
         public void AuthData()
         {
-            
-            
             TokenUser = Per.x;
             TokenGroup = Per.y;
             GroupId = Per.z;
-            MessageBox.Show($"{Per.x}");
-            //button2.Enabled = true;
-            //button3.Enabled = true;
-            //label3.Text = "ddd";
-        }
+			button2.Enabled = true;
+			button3.Enabled = true;
+		}
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -98,14 +94,11 @@ namespace WindowsFormsApp2
             UserPost f = new UserPost();
             f.Show();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //
         //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
         //
+
         List<string> sub = new List<string>();
 
 		private void button5_Click(object sender, EventArgs e)
@@ -126,7 +119,6 @@ namespace WindowsFormsApp2
             });
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
-				//GroupId = "205658019",
 				GroupId = GroupId,
 				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
@@ -165,4 +157,5 @@ namespace WindowsFormsApp2
 }
 //c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3 Коля
 //be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00 Дмитрий
+//b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c48fea Новый Дмитрий
 //12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98 Группа

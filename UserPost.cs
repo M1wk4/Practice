@@ -36,17 +36,32 @@ namespace WindowsFormsApp2
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)));
 
 
-			var post = api.Wall.Post(new WallPostParams
-			{
-				OwnerId = -205658019,
-				FriendsOnly = false,
-				FromGroup = false,
-				Message = "ХУZ",
-				Signed = true,
-			});
-			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
+			//var post = api.Wall.Post(new WallPostParams
+			//{
+			//	OwnerId = -205658019,
+			//	FriendsOnly = false,
+			//	FromGroup = false,
+			//	Message = "ХУZ",
+			//	Signed = true,
+			//});
+			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
+
+
+			//var getById = api.Wall.Get(new WallGetParams
+			//{
+			//	OwnerId = 302292451,
+			//	Count = 1,
+			//	Extended = true
+			//});
+			//var k = getById.TotalCount.ToString();
+
 
 			var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
+
+
+			//$"wall+{getById.}"
+			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(getById.ToString())));
+			//var lastPost = getById
 
 			//wall302292451_919
 			//- 205658019)

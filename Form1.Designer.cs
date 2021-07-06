@@ -43,13 +43,14 @@ namespace WindowsFormsApp2
 			this.button4 = new System.Windows.Forms.Button();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.button5 = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
 			// 
 			this.textBox1.BackColor = System.Drawing.Color.White;
-			this.textBox1.Location = new System.Drawing.Point(289, 73);
+			this.textBox1.Location = new System.Drawing.Point(625, 62);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ReadOnly = true;
@@ -59,8 +60,9 @@ namespace WindowsFormsApp2
 			// 
 			// button2
 			// 
+			this.button2.Enabled = false;
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button2.Location = new System.Drawing.Point(289, 218);
+			this.button2.Location = new System.Drawing.Point(625, 207);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(247, 27);
 			this.button2.TabIndex = 3;
@@ -70,6 +72,7 @@ namespace WindowsFormsApp2
 			// 
 			// button3
 			// 
+			this.button3.Enabled = false;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.button3.Location = new System.Drawing.Point(625, 522);
 			this.button3.Name = "button3";
@@ -82,7 +85,7 @@ namespace WindowsFormsApp2
 			// textBox2
 			// 
 			this.textBox2.BackColor = System.Drawing.Color.White;
-			this.textBox2.Location = new System.Drawing.Point(289, 324);
+			this.textBox2.Location = new System.Drawing.Point(625, 313);
 			this.textBox2.Multiline = true;
 			this.textBox2.Name = "textBox2";
 			this.textBox2.ReadOnly = true;
@@ -95,7 +98,7 @@ namespace WindowsFormsApp2
 			this.label1.BackColor = System.Drawing.SystemColors.Control;
 			this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(289, 20);
+			this.label1.Location = new System.Drawing.Point(625, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(247, 50);
 			this.label1.TabIndex = 7;
@@ -106,7 +109,7 @@ namespace WindowsFormsApp2
 			// 
 			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label2.Location = new System.Drawing.Point(289, 271);
+			this.label2.Location = new System.Drawing.Point(625, 258);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(247, 50);
 			this.label2.TabIndex = 8;
@@ -145,28 +148,30 @@ namespace WindowsFormsApp2
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(599, 73);
+			this.comboBox1.Location = new System.Drawing.Point(255, 62);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 12;
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(726, 65);
+			this.button4.Location = new System.Drawing.Point(382, 207);
 			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(121, 35);
+			this.button4.Size = new System.Drawing.Size(222, 27);
 			this.button4.TabIndex = 13;
-			this.button4.Text = "Вывести информацию";
+			this.button4.Text = "Вывод";
 			this.button4.UseVisualStyleBackColor = true;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(599, 106);
+			this.textBox3.BackColor = System.Drawing.Color.White;
+			this.textBox3.Location = new System.Drawing.Point(382, 62);
 			this.textBox3.Multiline = true;
 			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(222, 215);
+			this.textBox3.ReadOnly = true;
+			this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox3.Size = new System.Drawing.Size(222, 139);
 			this.textBox3.TabIndex = 14;
 			// 
 			// button5
@@ -179,12 +184,25 @@ namespace WindowsFormsApp2
 			this.button5.UseVisualStyleBackColor = true;
 			this.button5.Click += new System.EventHandler(this.button5_Click);
 			// 
+			// label4
+			// 
+			this.label4.BackColor = System.Drawing.SystemColors.Control;
+			this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.Location = new System.Drawing.Point(382, 9);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(222, 50);
+			this.label4.TabIndex = 16;
+			this.label4.Text = "Вывести информацию о пользователе";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 561);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.button4);
@@ -224,6 +242,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Button button5;
+		public System.Windows.Forms.Label label4;
 	}
 }
 
