@@ -115,9 +115,6 @@ namespace WindowsFormsApp2
 			textBox3.Text += $"ID: {p.Id.ToString()}\r\n";
 			textBox3.Text += $"Имя: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName))}\r\n";
 			textBox3.Text += $"Фамилия: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName))}\r\n";
-			textBox3.Text += $"Дата рождения: {}\r\n";
-			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
-			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
 		}
 
 		//
@@ -182,14 +179,11 @@ namespace WindowsFormsApp2
 				sub.Add(Convert.ToString(user.Id));
 				comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
 			}
-			DOP_ZAD f = new DOP_ZAD();
-			f.Show();
 		}
 
 		//
 		//ДОБАВЛЕНИЕ ПУБЛИКАЦИИ НА СТЕНУ СООБЩЕСТВА
 		//
-
 		public void GroupPost(object sender, EventArgs e)
 		{
 			var api = new VkApi();
@@ -227,57 +221,3 @@ namespace WindowsFormsApp2
 		}
 	}
 }
-//c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3 Коля
-//be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00 Дмитрий
-//b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c48fea Новый Дмитрий
-//12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98 Группа
-
-
-
-//РЕПОСТ!!
-
-
-//var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
-
-
-//wall302292451_919
-//- 205658019)
-
-//var post = api.Wall.Post(new WallPostParams
-//{
-//	OwnerId = 302292451,
-//	Message = "k",
-//});
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
-
-//var post2 = api.Wall.Post(new WallPostParams
-//{
-
-//	OwnerId = -205658019,
-//	PostId = 2,
-//	Message = "Хыыыы"
-//});
-//var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
-//var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
-//wall302292451_919
-//- 205658019)
-
-//var post = api.Wall.Post(new WallPostParams
-//{
-//	OwnerId = 302292451,
-//	Message = "k",
-//});
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
-
-//var post2 = api.Wall.Post(new WallPostParams
-//{
-
-//	OwnerId = -205658019,
-//	PostId = 2,
-//	Message = "Хыыыы"
-//});
-//var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
-//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));

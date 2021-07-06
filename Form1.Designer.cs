@@ -190,7 +190,7 @@ namespace WindowsFormsApp2
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(247, 50);
 			this.label4.TabIndex = 16;
-			this.label4.Text = "Вывести информацию о пользователе";
+			this.label4.Text = "Информация о пользователе";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// textBox4
@@ -238,7 +238,7 @@ namespace WindowsFormsApp2
 			this.groupBox1.Controls.Add(this.trackBar2);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.trackBar1);
-			this.groupBox1.Location = new System.Drawing.Point(168, 156);
+			this.groupBox1.Location = new System.Drawing.Point(171, 154);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(215, 280);
 			this.groupBox1.TabIndex = 20;
@@ -350,7 +350,7 @@ namespace WindowsFormsApp2
 			// 
 			// monthCalendar1
 			// 
-			this.monthCalendar1.Location = new System.Drawing.Point(6, 111);
+			this.monthCalendar1.Location = new System.Drawing.Point(5, 111);
 			this.monthCalendar1.Name = "monthCalendar1";
 			this.monthCalendar1.TabIndex = 23;
 			// 
