@@ -30,28 +30,23 @@ namespace WindowsFormsApp2
         }
         public void AuthData(string x, string y, string z)
 		{
+            button2.Enabled = true;
+            button3.Enabled = true;
             TokenUser = x;
             TokenGroup = y;
             GroupId = z;
-            button2.Enabled = true;
-            button3.Enabled = true;
+            MessageBox.Show($"{TokenUser}\n{TokenGroup}\n{GroupId}\n\n{x}\n{y}\n{z}");
         }
 
         //
-        //(out of date) ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
+        //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
         //
 
         public string getAuthForGroup()
         {
-            string fileName = @"auth_vk.txt";
             string token = "";
             try
             {
-                //using (StreamReader sr = new StreamReader(fileName))
-                //{
-
-                //    token = sr.ReadLine();
-                //}
                 token = TokenGroup;
             }
             catch (Exception e)
@@ -67,15 +62,9 @@ namespace WindowsFormsApp2
 
         public string getAuthForUser()
         {
-            string fileName = @"auth_vk.txt";
             string token = "";
             try
             {
-                //using (StreamReader sr = new StreamReader(fileName))
-                //{
-                //    sr.ReadLine();
-                //    token = sr.ReadLine();
-                //}
                 token = TokenUser;
             }
             catch (Exception e)
@@ -95,14 +84,11 @@ namespace WindowsFormsApp2
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
-				AccessToken = getAuthForGroup() //(out of date)
-
-				//AccessToken = TokenGroup
+				AccessToken = getAuthForGroup()
 			});
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
 				GroupId = "205658019",
-				//(out of date)
 				//GroupId = GroupId,
 			Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
@@ -121,7 +107,6 @@ namespace WindowsFormsApp2
             api_p.Authorize(new ApiAuthParams
             {
                 AccessToken = getAuthForUser()
-                //AccessToken = TokenUser
             });
             var getFriends = api_p.Friends.Get(new FriendsGetParams
             {
