@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             TokenUser = x;
             TokenGroup = y;
             GroupId = z;
-            MessageBox.Show($"{TokenUser}");
+            //MessageBox.Show($"{TokenUser}");
             //button2.Enabled = true;
             //button3.Enabled = true;
             //label3.Text = "ddd";
@@ -85,8 +85,8 @@ namespace WindowsFormsApp2
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
-				AccessToken = getAuthForGroup()
-			});
+                AccessToken = getAuthForGroup()
+            });
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
 				//GroupId = "205658019",
