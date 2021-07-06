@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
 			//{
 			//AccessToken = getAuthForGroup()
 			//});
-			//var UserName = api.Users.Get(new long[] {302292451}, fields: ProfileFields.Photo100).FirstOrDefault();
+			//var UserName = api.Users.Get(new long[] {302292451}).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
 
 			label3.Text = $"Здравствуйте!";
@@ -112,10 +112,10 @@ namespace WindowsFormsApp2
 				return;
 			var p = api_p.Users.Get(new long[] { Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
 			textBox3.Text = "";
-			textBox3.Text += Convert.ToString(p.Id) + "\r\n";
-			textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
-			textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
-
+			textBox3.Text += $"ID: {p.Id.ToString()}\r\n";
+			textBox3.Text += $"Имя: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName))}\r\n";
+			textBox3.Text += $"Фамилия: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName))}\r\n";
+			textBox3.Text += $"Дата рождения: {}\r\n";
 			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
 			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
 		}
@@ -193,20 +193,37 @@ namespace WindowsFormsApp2
 		public void GroupPost(object sender, EventArgs e)
 		{
 			var api = new VkApi();
+			DateTime d = monthCalendar1.SelectionRange.Start;
+			DateTime f = new DateTime(d.Year, d.Month, d.Day, trackBar1.Value, trackBar2.Value, 0);
 			api.Authorize(new ApiAuthParams
 			{
 				AccessToken = getAuthForUser()
 			});
 			if (textBox4.Text.Length == 0)
 				return;
-			var post = api.Wall.Post(new WallPostParams
+			if (checkBox4.Checked)
 			{
-				OwnerId = -205658019,
-				FriendsOnly = checkBox2.Checked,
-				FromGroup = checkBox3.Checked,
-				Message = textBox4.Text,
-				Signed = checkBox1.Checked,
-			});
+				var post = api.Wall.Post(new WallPostParams
+				{
+					OwnerId = -205658019,
+					FriendsOnly = checkBox2.Checked,
+					FromGroup = checkBox3.Checked,
+					Message = textBox4.Text,
+					Signed = checkBox1.Checked,
+					PublishDate = f
+				});
+			}
+			else
+			{
+				var post = api.Wall.Post(new WallPostParams
+				{
+					OwnerId = -205658019,
+					FriendsOnly = checkBox2.Checked,
+					FromGroup = checkBox3.Checked,
+					Message = textBox4.Text,
+					Signed = checkBox1.Checked,
+				});
+			}
 		}
 	}
 }
