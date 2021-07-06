@@ -30,12 +30,12 @@ namespace WindowsFormsApp2
         }
         public void AuthData(string x, string y, string z)
 		{
-            button2.Enabled = true;
-            button3.Enabled = true;
             TokenUser = x;
             TokenGroup = y;
             GroupId = z;
-            MessageBox.Show($"{TokenUser}\n{TokenGroup}\n{GroupId}\n\n{x}\n{y}\n{z}");
+            button2.Enabled = true;
+            button3.Enabled = true;
+            label3.Text = "dd";
         }
 
         //
@@ -88,9 +88,9 @@ namespace WindowsFormsApp2
 			});
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
-				GroupId = "205658019",
-				//GroupId = GroupId,
-			Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
+				//GroupId = "205658019",
+				GroupId = GroupId,
+				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
             foreach (User user in getFollowers)
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
