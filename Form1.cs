@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VkNet;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
+using VkNet.Enums.Filters;
 using System.IO;
 namespace WindowsFormsApp2
 {
@@ -38,10 +39,10 @@ namespace WindowsFormsApp2
             TokenGroup = Per.y;
             GroupId = Per.z;
             MessageBox.Show($"{Per.x}");
-			button2.Enabled = true;
-			button3.Enabled = true;
-			label3.Text = "ddd";
-		}
+            //button2.Enabled = true;
+            //button3.Enabled = true;
+            //label3.Text = "ddd";
+        }
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -81,16 +82,34 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UserPost UP = new UserPost();
-            UP.k();
+            var api_p = new VkApi();
+            api_p.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForUser()
+            });
+            
+            var p = api_p.Users.Get(new long[] {Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
+            textBox3.Text = "";
+            textBox3.Text += Convert.ToString(p.Id) + "\r\n";
+            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
+            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
+            //textBox1.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.Status));
+            //textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
+            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //
         //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
         //
-
+        List<string> sub = new List<string>();
         private void GroupMemberList(object sender, EventArgs e)
         {
+
+            MessageBox.Show($"{TokenUser}");
             textBox1.Text = "";
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
@@ -106,7 +125,7 @@ namespace WindowsFormsApp2
             foreach (User user in getFollowers)
             {
                 textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
-                //sub.Add((Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)));
+                sub.Add(Convert.ToString(user.Id));
                 comboBox1.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n");
             }
         }
@@ -114,8 +133,8 @@ namespace WindowsFormsApp2
         //
         //СПИСОК ДРУЗЕЙ
         //
-
-		private void FriendList(object sender, EventArgs e)
+        
+        private void FriendList(object sender, EventArgs e)
 		{
             textBox2.Text = "";
             var api_p = new VkApi();
