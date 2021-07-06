@@ -85,12 +85,12 @@ namespace WindowsFormsApp2
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
-                AccessToken = getAuthForGroup()
+				AccessToken = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba9f98"
             });
             var getFollowers = api_group.Groups.GetMembers(new GroupsGetMembersParams()
             {
-				//GroupId = "205658019",
-				GroupId = GroupId,
+				GroupId = "205658019",
+				//GroupId = GroupId,
 				Fields = VkNet.Enums.Filters.UsersFields.FirstNameAbl
             });
             foreach (User user in getFollowers)
