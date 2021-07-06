@@ -38,10 +38,10 @@ namespace WindowsFormsApp2
             TokenGroup = Per.y;
             GroupId = Per.z;
             MessageBox.Show($"{Per.x}");
-            //button2.Enabled = true;
-            //button3.Enabled = true;
-            //label3.Text = "ddd";
-        }
+			button2.Enabled = true;
+			button3.Enabled = true;
+			label3.Text = "ddd";
+		}
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -88,10 +88,9 @@ namespace WindowsFormsApp2
         //
         //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
         //
-        //List<string> sub = new List<string>();
+
         private void GroupMemberList(object sender, EventArgs e)
         {
-            MessageBox.Show($"{TokenUser}");
             textBox1.Text = "";
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
