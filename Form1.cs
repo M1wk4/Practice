@@ -42,6 +42,9 @@ namespace WindowsFormsApp2
             button4.Enabled = true;
             button5.Enabled = true;
             textBox4.ReadOnly = false;
+
+            //Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
+
 			//var api = new VkApi();
 			//api.Authorize(new ApiAuthParams
 			//{
@@ -49,7 +52,11 @@ namespace WindowsFormsApp2
 			//});
 			//var UserName = api.Users.Get(new long[] {302292451}, fields: ProfileFields.Photo100).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
+
             label3.Text = $"Здравствуйте!";
+
+            //Попытка написания кода, который после логирования ставил в pictureBox1 аватарку ВК
+
             //var UserPic = api.Photo.Get(new PhotoGetParams
             //{
             //    OwnerId = 302292451,
@@ -93,7 +100,7 @@ namespace WindowsFormsApp2
         }
 
         //
-        //ВЫВОД ИНФОРМАЦИИ О ТЕКУЩЕМ ПОЛЬЗОВАТЕЛЕ (опять сломалось)
+        //ВЫВОД ИНФОРМАЦИИ О ТЕКУЩЕМ ПОЛЬЗОВАТЕЛЕ
         //
         private void getUserInfo(object sender, EventArgs e)
         {
@@ -102,6 +109,8 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = getAuthForUser()
 			});
+            if (comboBox1.Text.Length == 0)
+                return;
 			var p = api_p.Users.Get(new long[] { Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
 			textBox3.Text = "";
 			textBox3.Text += Convert.ToString(p.Id) + "\r\n";
@@ -168,13 +177,15 @@ namespace WindowsFormsApp2
             {
                 AccessToken = getAuthForUser()
             });
+            if (textBox4.Text.Length == 0)
+                return;
             var post = api.Wall.Post(new WallPostParams
             {
                 OwnerId = -205658019,
-                FriendsOnly = false,
-                FromGroup = true,
+                FriendsOnly = checkBox2.Checked,
+                FromGroup = checkBox3.Checked,
                 Message = textBox4.Text,
-                Signed = true,
+                Signed = checkBox1.Checked,
             });
 
 

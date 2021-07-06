@@ -46,7 +46,12 @@ namespace WindowsFormsApp2
 			this.label4 = new System.Windows.Forms.Label();
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBox3 = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -182,7 +187,7 @@ namespace WindowsFormsApp2
 			// 
 			this.button5.Enabled = false;
 			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button5.Location = new System.Drawing.Point(370, 204);
+			this.button5.Location = new System.Drawing.Point(423, 314);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(149, 30);
 			this.button5.TabIndex = 15;
@@ -205,12 +210,12 @@ namespace WindowsFormsApp2
 			// textBox4
 			// 
 			this.textBox4.BackColor = System.Drawing.Color.White;
-			this.textBox4.Location = new System.Drawing.Point(281, 62);
+			this.textBox4.Location = new System.Drawing.Point(388, 62);
 			this.textBox4.Multiline = true;
 			this.textBox4.Name = "textBox4";
 			this.textBox4.ReadOnly = true;
 			this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox4.Size = new System.Drawing.Size(325, 139);
+			this.textBox4.Size = new System.Drawing.Size(218, 246);
 			this.textBox4.TabIndex = 17;
 			// 
 			// label5
@@ -218,12 +223,57 @@ namespace WindowsFormsApp2
 			this.label5.BackColor = System.Drawing.SystemColors.Control;
 			this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label5.Location = new System.Drawing.Point(281, 9);
+			this.label5.Location = new System.Drawing.Point(228, 9);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(325, 50);
+			this.label5.Size = new System.Drawing.Size(378, 50);
 			this.label5.TabIndex = 18;
 			this.label5.Text = "Написать пост";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox1.Location = new System.Drawing.Point(6, 19);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(155, 17);
+			this.checkBox1.TabIndex = 19;
+			this.checkBox1.Text = "Показать имя автора";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox1.Controls.Add(this.checkBox3);
+			this.groupBox1.Controls.Add(this.checkBox2);
+			this.groupBox1.Controls.Add(this.checkBox1);
+			this.groupBox1.Location = new System.Drawing.Point(222, 62);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(160, 181);
+			this.groupBox1.TabIndex = 20;
+			this.groupBox1.TabStop = false;
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox2.Location = new System.Drawing.Point(6, 42);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(139, 17);
+			this.checkBox2.TabIndex = 20;
+			this.checkBox2.Text = "Только для друзей";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// checkBox3
+			// 
+			this.checkBox3.AutoSize = true;
+			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox3.Location = new System.Drawing.Point(6, 65);
+			this.checkBox3.Name = "checkBox3";
+			this.checkBox3.Size = new System.Drawing.Size(128, 17);
+			this.checkBox3.TabIndex = 21;
+			this.checkBox3.Text = "От имени группы";
+			this.checkBox3.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -231,6 +281,7 @@ namespace WindowsFormsApp2
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 561);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.textBox4);
 			this.Controls.Add(this.label4);
@@ -254,6 +305,8 @@ namespace WindowsFormsApp2
 			this.Text = "API VK - Group №11";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -276,6 +329,10 @@ namespace WindowsFormsApp2
 		public System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox textBox4;
 		public System.Windows.Forms.Label label5;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.CheckBox checkBox3;
 	}
 }
 
