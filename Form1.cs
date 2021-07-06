@@ -42,15 +42,20 @@ namespace WindowsFormsApp2
             button4.Enabled = true;
             button5.Enabled = true;
             textBox4.ReadOnly = false;
-            var api = new VkApi();
-            api.Authorize(new ApiAuthParams
-            {
-                AccessToken = getAuthForGroup()
-            });
-            //var UserName = api.Users.Get(new long[] {302292451}).FirstOrDefault();
-            //label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
-
-            //var UserName = api.Users.Get(userIds: 302292451,fields);
+			//var api = new VkApi();
+			//api.Authorize(new ApiAuthParams
+			//{
+			//AccessToken = getAuthForGroup()
+			//});
+			//var UserName = api.Users.Get(new long[] {302292451}, fields: ProfileFields.Photo100).FirstOrDefault();
+			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
+            label3.Text = $"Здравствуйте!";
+            //var UserPic = api.Photo.Get(new PhotoGetParams
+            //{
+            //    OwnerId = 302292451,
+            //    AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile
+            //});
+            //pictureBox1.Image = new Image(UserPic.);
         }
 
         //
