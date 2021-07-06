@@ -233,6 +233,7 @@ namespace WindowsFormsApp2
 			// checkBox1
 			// 
 			this.checkBox1.AutoSize = true;
+			this.checkBox1.Enabled = false;
 			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.checkBox1.Location = new System.Drawing.Point(6, 19);
 			this.checkBox1.Name = "checkBox1";
@@ -256,6 +257,7 @@ namespace WindowsFormsApp2
 			// checkBox2
 			// 
 			this.checkBox2.AutoSize = true;
+			this.checkBox2.Enabled = false;
 			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.checkBox2.Location = new System.Drawing.Point(6, 42);
 			this.checkBox2.Name = "checkBox2";
@@ -267,6 +269,7 @@ namespace WindowsFormsApp2
 			// checkBox3
 			// 
 			this.checkBox3.AutoSize = true;
+			this.checkBox3.Enabled = false;
 			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.checkBox3.Location = new System.Drawing.Point(6, 65);
 			this.checkBox3.Name = "checkBox3";

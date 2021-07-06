@@ -41,6 +41,9 @@ namespace WindowsFormsApp2
 			button3.Enabled = true;
             button4.Enabled = true;
             button5.Enabled = true;
+            checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
+            checkBox3.Enabled = true;
             textBox4.ReadOnly = false;
 
             //Попытка написания кода, который после логировании менял текст label3 на "Здравствуйте, *username*!"
