@@ -81,7 +81,8 @@ namespace WindowsFormsApp2
 
 		private void GroupMemberList(object sender, EventArgs e)
         {
-			textBox1.Text = "";
+            MessageBox.Show($"{TokenUser}");
+            textBox1.Text = "";
 			var api_group = new VkApi();
             api_group.Authorize(new ApiAuthParams
             {
