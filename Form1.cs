@@ -80,7 +80,8 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            UserPost UP = new UserPost();
+            UP.k();
         }
 
         //

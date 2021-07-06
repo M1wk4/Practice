@@ -21,7 +21,6 @@ namespace WindowsFormsApp2
 		//
 		//ПОДТВЕРЖДЕНИЕ И ВЫХОД ИЗ ОКНА АВТОРИЗАЦИИ
 		//
-		public 
 		public void AuthAccept(object sender, EventArgs e)
 		{
 			Form1 f1 = new Form1();
