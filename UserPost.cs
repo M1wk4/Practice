@@ -62,7 +62,7 @@ namespace WindowsFormsApp2
 			//});
 			//var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
 			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
-			MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
+			//MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
 		}
 	}
 }
