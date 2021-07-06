@@ -44,6 +44,8 @@ namespace WindowsFormsApp2
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.button5 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -125,7 +127,7 @@ namespace WindowsFormsApp2
 			this.button1.TabIndex = 9;
 			this.button1.Text = "Войти";
 			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += new System.EventHandler(this.AuthEnter);
 			// 
 			// pictureBox1
 			// 
@@ -148,7 +150,7 @@ namespace WindowsFormsApp2
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(382, 62);
+			this.comboBox1.Location = new System.Drawing.Point(12, 313);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(222, 21);
 			this.comboBox1.TabIndex = 12;
@@ -157,18 +159,18 @@ namespace WindowsFormsApp2
 			// 
 			this.button4.Enabled = false;
 			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button4.Location = new System.Drawing.Point(382, 234);
+			this.button4.Location = new System.Drawing.Point(12, 485);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(222, 27);
 			this.button4.TabIndex = 13;
 			this.button4.Text = "Вывод";
 			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
+			this.button4.Click += new System.EventHandler(this.getUserInfo);
 			// 
 			// textBox3
 			// 
 			this.textBox3.BackColor = System.Drawing.Color.White;
-			this.textBox3.Location = new System.Drawing.Point(382, 89);
+			this.textBox3.Location = new System.Drawing.Point(12, 340);
 			this.textBox3.Multiline = true;
 			this.textBox3.Name = "textBox3";
 			this.textBox3.ReadOnly = true;
@@ -178,25 +180,49 @@ namespace WindowsFormsApp2
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(231, 62);
+			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.button5.Location = new System.Drawing.Point(370, 204);
 			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(75, 23);
+			this.button5.Size = new System.Drawing.Size(149, 30);
 			this.button5.TabIndex = 15;
-			this.button5.Text = "button5";
+			this.button5.Text = "Опубликовать";
 			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new System.EventHandler(this.button5_Click);
+			this.button5.Click += new System.EventHandler(this.GroupPost);
 			// 
 			// label4
 			// 
 			this.label4.BackColor = System.Drawing.SystemColors.Control;
 			this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label4.Location = new System.Drawing.Point(382, 9);
+			this.label4.Location = new System.Drawing.Point(12, 258);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(222, 50);
 			this.label4.TabIndex = 16;
 			this.label4.Text = "Вывести информацию о пользователе";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// textBox4
+			// 
+			this.textBox4.BackColor = System.Drawing.Color.White;
+			this.textBox4.Location = new System.Drawing.Point(281, 62);
+			this.textBox4.Multiline = true;
+			this.textBox4.Name = "textBox4";
+			this.textBox4.ReadOnly = true;
+			this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox4.Size = new System.Drawing.Size(325, 139);
+			this.textBox4.TabIndex = 17;
+			// 
+			// label5
+			// 
+			this.label5.BackColor = System.Drawing.SystemColors.Control;
+			this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label5.Location = new System.Drawing.Point(281, 9);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(325, 50);
+			this.label5.TabIndex = 18;
+			this.label5.Text = "Написать пост";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// Form1
 			// 
@@ -204,6 +230,8 @@ namespace WindowsFormsApp2
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 561);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.textBox4);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.textBox3);
@@ -245,6 +273,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Button button5;
 		public System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox textBox4;
+		public System.Windows.Forms.Label label5;
 	}
 }
 

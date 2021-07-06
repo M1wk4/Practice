@@ -24,8 +24,9 @@ namespace WindowsFormsApp2
         //ВЫЗОВ ОКНА АВТОРИЗАЦИИ
         //
 
+        List<string> sub = new List<string>();
         string TokenUser, TokenGroup, GroupId;
-        public void button1_Click(object sender, EventArgs e)
+        public void AuthEnter(object sender, EventArgs e)
         {
             AuthForm f1 = new AuthForm();
             f1.ShowDialog();
@@ -39,7 +40,10 @@ namespace WindowsFormsApp2
 			button2.Enabled = true;
 			button3.Enabled = true;
             button4.Enabled = true;
-		}
+            button5.Enabled = true;
+            textBox4.ReadOnly = false;
+            label3.Text = $"Здравствуйте, {}!";
+        }
 
         //
         //ПОЛУЧЕНИЕ ТОКЕНА ГРУППЫ
@@ -77,38 +81,34 @@ namespace WindowsFormsApp2
             return token;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //
+        //ВЫВОД ИНФОРМАЦИИ О ТЕКУЩЕМ ПОЛЬЗОВАТЕЛЕ (опять сломалось)
+        //
+
+        private void getUserInfo(object sender, EventArgs e)
         {
-            var api_p = new VkApi();
-            api_p.Authorize(new ApiAuthParams
-            {
-                AccessToken = getAuthForUser()
-            });
-            
-            var p = api_p.Users.Get(new long[] {Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
-            textBox3.Text = "";
-            textBox3.Text += Convert.ToString(p.Id) + "\r\n";
-            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
-            textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
-            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
-            //textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
-            //UserPost f = new UserPost();
-            //f.Show();
+            comboBox1.Items.Clear();
+			var api_p = new VkApi();
+			api_p.Authorize(new ApiAuthParams
+			{
+				AccessToken = getAuthForUser()
+			});
+			var p = api_p.Users.Get(new long[] { Convert.ToInt64(sub[comboBox1.SelectedIndex]) }).FirstOrDefault();
+			textBox3.Text = "";
+			textBox3.Text += Convert.ToString(p.Id) + "\r\n";
+			textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName)) + "\r\n";
+			textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName)) + "\r\n";
+
+			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.About));
+			//textBox3.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.City.Title)) + "\r\n";
+			//UserPost f = new UserPost();
+			//f.Show();
         }
 
         //
         //СПИСОК УЧАСТНИКОВ СООБЩЕСТВА
         //
-
-        List<string> sub = new List<string>();
-
-		private void button5_Click(object sender, EventArgs e)
-		{
-            UserPost UP = new UserPost();
-            UP.k();
-		}
-
-		private void GroupMemberList(object sender, EventArgs e)
+        private void GroupMemberList(object sender, EventArgs e)
         {
             textBox1.Text = "";
 			var api_group = new VkApi();
@@ -149,8 +149,55 @@ namespace WindowsFormsApp2
                 textBox2.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName + " " + user.LastName)) + "\r\n";
         }
 
+        //
+        //ДОБАВЛЕНИЕ ПУБЛИКАЦИИ НА СТЕНУ СООБЩЕСТВА
+        //
 
-	}
+        public void GroupPost(object sender, EventArgs e)
+        {
+            var api = new VkApi();
+            api.Authorize(new ApiAuthParams
+            {
+                AccessToken = getAuthForUser()
+            });
+            var post = api.Wall.Post(new WallPostParams
+            {
+                OwnerId = -205658019,
+                FriendsOnly = false,
+                FromGroup = true,
+                Message = textBox4.Text,
+                Signed = true,
+            });
+
+
+            //РЕПОСТ!!
+
+
+            //var post2 = api.Wall.Repost(@object: "wall302292451_919", message: "ku", groupId: 205658019, markAsAds: false);
+
+
+            //wall302292451_919
+            //- 205658019)
+
+            //var post = api.Wall.Post(new WallPostParams
+            //{
+            //	OwnerId = 302292451,
+            //	Message = "k",
+            //});
+            //MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post.ToString())));
+
+            //var post2 = api.Wall.Post(new WallPostParams
+            //{
+
+            //	OwnerId = -205658019,
+            //	PostId = 2,
+            //	Message = "Хыыыы"
+            //});
+            //var post2 = api.Wall.GetById(posts: -205658019_2,-205658019_1);
+            //MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.WallPosts[0].Text)));
+            //MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(post2.ToString())));
+        }
+    }
 }
 //c481d9e12c2d0fbc1dff4ce14c339dfc2c2536952a7045bf8f09ce2b2e38b3f9729140d0a15ad9a3631a3 Коля
 //be66d05559f96dfb1c6f972b73d7797361c92956fcc6a2e4b06c23bcb28b4f1ab24aa37a87b7acee42a00 Дмитрий
