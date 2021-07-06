@@ -33,9 +33,10 @@ namespace WindowsFormsApp2
             TokenUser = x;
             TokenGroup = y;
             GroupId = z;
-            button2.Enabled = true;
-            button3.Enabled = true;
-            label3.Text = "ddd";
+            MessageBox.Show($"{TokenUser}");
+            //button2.Enabled = true;
+            //button3.Enabled = true;
+            //label3.Text = "ddd";
         }
 
         //
