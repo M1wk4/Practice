@@ -249,12 +249,13 @@ namespace WindowsFormsApp2
 			this.checkBox1.AutoSize = true;
 			this.checkBox1.Enabled = false;
 			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(174, 60);
+			this.checkBox1.Location = new System.Drawing.Point(174, 78);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(155, 17);
 			this.checkBox1.TabIndex = 19;
 			this.checkBox1.Text = "Показать имя автора";
 			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.Visible = false;
 			// 
 			// groupBox1
 			// 
@@ -350,19 +351,20 @@ namespace WindowsFormsApp2
 			this.checkBox3.AutoSize = true;
 			this.checkBox3.Enabled = false;
 			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox3.Location = new System.Drawing.Point(174, 96);
+			this.checkBox3.Location = new System.Drawing.Point(174, 60);
 			this.checkBox3.Name = "checkBox3";
 			this.checkBox3.Size = new System.Drawing.Size(128, 17);
 			this.checkBox3.TabIndex = 21;
 			this.checkBox3.Text = "От имени группы";
 			this.checkBox3.UseVisualStyleBackColor = true;
+			this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
 			// 
 			// checkBox2
 			// 
 			this.checkBox2.AutoSize = true;
 			this.checkBox2.Enabled = false;
 			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox2.Location = new System.Drawing.Point(174, 78);
+			this.checkBox2.Location = new System.Drawing.Point(174, 96);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(139, 17);
 			this.checkBox2.TabIndex = 20;

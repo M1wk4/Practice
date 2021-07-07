@@ -306,6 +306,11 @@ namespace WindowsFormsApp2
 			}
 		}
 
+		private void checkBox3_CheckedChanged(object sender, EventArgs e)
+		{
+			checkBox1.Visible = checkBox3.Checked;
+		}
+
 		//
 		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
 		//
