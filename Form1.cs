@@ -43,6 +43,7 @@ namespace WindowsFormsApp2
 			button5.Enabled = true;
 			button6.Enabled = true;
 			button7.Enabled = true;
+			button8.Enabled = true;
 			checkBox1.Enabled = true;
 			checkBox2.Enabled = true;
 			checkBox3.Enabled = true;

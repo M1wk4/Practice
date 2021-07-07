@@ -585,6 +585,7 @@ namespace WindowsFormsApp2
 			// 
 			// button8
 			// 
+			this.button8.Enabled = false;
 			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.button8.Location = new System.Drawing.Point(174, 722);
 			this.button8.Name = "button8";
