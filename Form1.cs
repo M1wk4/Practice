@@ -51,6 +51,8 @@ namespace WindowsFormsApp2
 			textBox2.ReadOnly = false;
 			textBox4.ReadOnly = false;
 			textBox5.ReadOnly = false;
+			textBox7.ReadOnly = false;
+			textBox8.ReadOnly = false;
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
@@ -271,8 +273,13 @@ namespace WindowsFormsApp2
 			label17.Text = DateTime.Now.AddSeconds(1).ToString();
 		}
 
-        private void button8_Click(object sender, EventArgs e)
-        {
+		//
+		//ВЫВОД ТЕКСТОВ ПОСЛЕДНИХ ТРЁХ ПОСТОВ ПОЛЬЗОВАТЕЛЯ
+		//
+		private void TextUserPosts(object sender, EventArgs e)
+		{
+			textBox9.Text = "";
+			int k = 1;
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
@@ -280,20 +287,24 @@ namespace WindowsFormsApp2
 			});
 			var get = api.Wall.Get(new WallGetParams
 			{
-				OwnerId = int.Parse(textBox7.Text),
+				OwnerId = int.Parse(textBox8.Text),
 				Count = 3,
-
-			}) ;
+				Filter = VkNet.Enums.SafetyEnums.WallFilter.Owner
+			});
 			foreach (var wallPost in get.WallPosts)
-            {
-				textBox6.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(wallPost.Text)) + "\r\n";
+			{
+				if (Encoding.UTF8.GetString(Encoding.Default.GetBytes(wallPost.Text)).Length == 0)
+					textBox9.Text += $"{k}-й пост:\r\nТекст отсутствует!\r\n";
+				else
+					textBox9.Text += $"{k}-й пост:\r\n{Encoding.UTF8.GetString(Encoding.Default.GetBytes(wallPost.Text))}\r\n";
+				k++;
 			}
 		}
 
-        //
-        //ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
-        //
-        List<string> birth = new List<string>();
+		//
+		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
+		//
+		List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
 			if (textBox7.TextLength == 0)
