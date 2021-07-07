@@ -117,6 +117,38 @@ namespace WindowsFormsApp2
 			textBox3.Text += $"ID: {p.Id.ToString()}\r\n";
 			textBox3.Text += $"Имя: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.FirstName))}\r\n";
 			textBox3.Text += $"Фамилия: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName))}\r\n";
+			if (Convert.ToInt32(p.Sex) == 1)
+            {
+				textBox3.Text += $"Пол: мужской \r\n";
+			}
+			else if (Convert.ToInt32(p.Sex) == 0)
+			{
+				textBox3.Text += $"Пол: женский \r\n";
+			}
+			else
+				textBox3.Text += $"Пол: не указан \r\n";
+			textBox3.Text += $"Фамилия: {Encoding.UTF8.GetString(Encoding.Default.GetBytes(p.LastName))}\r\n";
+			
+			if (p.Counters.Friends > 0)
+			{
+				textBox3.Text += $"Кол - во друзей: {p.Counters.Friends} \r\n";
+			}
+			else
+				textBox3.Text += $"Кол - во друзей: скрыты \r\n";
+
+			if (p.Counters.Followers > 0)
+			{
+				textBox3.Text += $"Кол - во подписчиков: {p.Counters.Followers} \r\n";
+			}
+			else
+				textBox3.Text += $"Кол - во подписчиков: скрыты \r\n";
+
+			if (p.Counters.Groups > 0)
+			{
+				textBox3.Text += $"Кол - во сообществ: {p.Counters.Groups} \r\n";
+			}
+			else
+				textBox3.Text += $"Кол - во сообществ: скрыты \r\n";
 		}
 
 		//
