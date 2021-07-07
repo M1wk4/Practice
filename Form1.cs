@@ -262,13 +262,10 @@ namespace WindowsFormsApp2
 				return;
 			var repost = api.Wall.Repost(@object: $"wall{textBox2.Text}", message: $"{textBox5.Text}", groupId: Convert.ToInt64(GroupId), markAsAds: checkBox5.Checked);
 		}
-		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			//if (Char.IsDigit(e.KeyChar)) return;
-			//else
-			//	e.Handled = true;
-		}
 
+		//
+		//ВРЕМЯ
+		//
 		private void ClockTick(object sender, EventArgs e)
 		{
 			label17.Text = DateTime.Now.AddSeconds(1).ToString();
@@ -306,7 +303,6 @@ namespace WindowsFormsApp2
 				k++;
 			}
 		}
-
 		private void checkBox3_CheckedChanged(object sender, EventArgs e)
 		{
 			checkBox1.Visible = checkBox3.Checked;
@@ -318,6 +314,7 @@ namespace WindowsFormsApp2
 		List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
+			birth.Clear();
 			if (textBox7.TextLength == 0)
 				return;
 			textBox6.Text = "";
@@ -326,7 +323,6 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = Per.x
 			});
-
 			var getFriends = api_p.Friends.Get(new FriendsGetParams
 			{
 				UserId = int.Parse(textBox7.Text),

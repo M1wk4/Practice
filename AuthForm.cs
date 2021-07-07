@@ -35,10 +35,5 @@ namespace WindowsFormsApp2
 			Per.z = textBox3.Text;
 			this.Close();
 		}
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
