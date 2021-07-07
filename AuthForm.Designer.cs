@@ -68,8 +68,6 @@ namespace WindowsFormsApp2
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(437, 46);
 			this.textBox1.TabIndex = 13;
-			this.textBox1.Text = "b2f32b361f740ad7111a5dab37948aa90a7c190fcc3313d5858bc3813c980d5fc93c7ee1688f0d1c4" +
-    "8fea";
 			// 
 			// label2
 			// 
@@ -88,8 +86,6 @@ namespace WindowsFormsApp2
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(437, 46);
 			this.textBox2.TabIndex = 15;
-			this.textBox2.Text = "12684541386004b8b73f2c0a17d5f779ab8bde09c3e387895b8d438b0f020b090eaf4e63045bdd3ba" +
-    "9f98";
 			// 
 			// label4
 			// 
@@ -108,7 +104,6 @@ namespace WindowsFormsApp2
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(437, 46);
 			this.textBox3.TabIndex = 17;
-			this.textBox3.Text = "205658019";
 			// 
 			// button1
 			// 
