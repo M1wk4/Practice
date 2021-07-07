@@ -37,6 +37,7 @@ namespace WindowsFormsApp2
 			button4.Enabled = true;
 			button5.Enabled = true;
 			button6.Enabled = true;
+			button7.Enabled = true;
 			checkBox1.Enabled = true;
 			checkBox2.Enabled = true;
 			checkBox3.Enabled = true;
@@ -45,6 +46,7 @@ namespace WindowsFormsApp2
 			textBox2.ReadOnly = false;
 			textBox4.ReadOnly = false;
 			textBox5.ReadOnly = false;
+			textBox6.ReadOnly = false;
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
