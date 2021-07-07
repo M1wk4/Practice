@@ -239,6 +239,13 @@ namespace WindowsFormsApp2
 			var repost = api.Wall.Repost(@object: $"wall{textBox2.Text}", message: $"{textBox5.Text}", groupId: Convert.ToInt64(GroupId), markAsAds: checkBox5.Checked);
 		}
 
+		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar)) return;
+			else
+				e.Handled = true;
+		}
+
 		//
 		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
 		//
