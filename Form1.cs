@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = getAuthForUser()
 			});
-
+			MessageBox.Show(api.UserId.Value.ToString());
 			//var UserName = api.Users.Get(new long[] { api.UserId.Value }).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
 
@@ -238,12 +238,11 @@ namespace WindowsFormsApp2
 				return;
 			var repost = api.Wall.Repost(@object: $"wall{textBox2.Text}", message: $"{textBox5.Text}", groupId: Convert.ToInt64(GroupId), markAsAds: checkBox5.Checked);
 		}
-
 		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (Char.IsDigit(e.KeyChar)) return;
-			else
-				e.Handled = true;
+			//if (Char.IsDigit(e.KeyChar)) return;
+			//else
+			//	e.Handled = true;
 		}
 
 		//
