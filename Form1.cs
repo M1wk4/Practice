@@ -291,6 +291,11 @@ namespace WindowsFormsApp2
 				Count = 3,
 				Filter = VkNet.Enums.SafetyEnums.WallFilter.Owner
 			});
+			if (get.WallPosts.Count==0)
+			{
+				textBox9.Text = "Постов нет!";
+				return;
+			}
 			foreach (var wallPost in get.WallPosts)
 			{
 				if (Encoding.UTF8.GetString(Encoding.Default.GetBytes(wallPost.Text)).Length == 0)
