@@ -36,31 +36,25 @@ namespace WindowsFormsApp2
 			button3.Enabled = true;
 			button4.Enabled = true;
 			button5.Enabled = true;
+			button6.Enabled = true;
 			checkBox1.Enabled = true;
 			checkBox2.Enabled = true;
 			checkBox3.Enabled = true;
 			checkBox4.Enabled = true;
+			checkBox5.Enabled = true;
+			textBox2.ReadOnly = false;
 			textBox4.ReadOnly = false;
+			textBox5.ReadOnly = false;
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
-				//AccessToken = getAuthForGroup()
 				AccessToken = getAuthForUser()
 			});
-			MessageBox.Show(api.UserId.Value.ToString());
-			//var UserName = api.Users.Get(new long[] { Convert.ToInt64(api.UserId.Value) }).FirstOrDefault();
+
+			//var UserName = api.Users.Get(new long[] { api.UserId.Value }).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
 
-			//label3.Text = $"Здравствуйте!";
-
-			//      Попытка написания кода, который после логирования ставил в pictureBox1 аватарку ВК
-
-			//var UserPic = api.Photo.Get(new PhotoGetParams
-			//{
-			//    OwnerId = 302292451,
-			//    AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile
-			//});
-			//pictureBox1.Image = new Image(UserPic.);
+			label3.Text = $"Здравствуйте!";
 		}
 
 		//
@@ -217,6 +211,21 @@ namespace WindowsFormsApp2
 					Signed = checkBox1.Checked,
 				});
 			}
+		}
+
+		//
+		//РЕПОСТ В ГРУППУ
+		//
+		private void GroupRepost(object sender, EventArgs e)
+		{
+			var api = new VkApi();
+			api.Authorize(new ApiAuthParams
+			{
+				AccessToken = getAuthForUser()
+			});
+			if (textBox2.Text.Length == 0)
+				return;
+			var repost = api.Wall.Repost(@object: $"wall{textBox2.Text}", message: $"{textBox5.Text}", groupId: Convert.ToInt64(GroupId), markAsAds: checkBox5.Checked);
 		}
 	}
 }
