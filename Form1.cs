@@ -207,7 +207,7 @@ namespace WindowsFormsApp2
 			{
 				var post = api.Wall.Post(new WallPostParams
 				{
-					OwnerId = -205658019,
+					OwnerId = -(Convert.ToInt64(GroupId)),
 					FriendsOnly = checkBox2.Checked,
 					FromGroup = checkBox3.Checked,
 					Message = textBox4.Text,
@@ -219,7 +219,7 @@ namespace WindowsFormsApp2
 			{
 				var post = api.Wall.Post(new WallPostParams
 				{
-					OwnerId = -205658019,
+					OwnerId = -(Convert.ToInt64(GroupId)),
 					FriendsOnly = checkBox2.Checked,
 					FromGroup = checkBox3.Checked,
 					Message = textBox4.Text,
