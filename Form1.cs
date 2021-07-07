@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = getAuthForUser()
 			});
-			MessageBox.Show(api.UserId.Value.ToString());
+
 			//var UserName = api.Users.Get(new long[] { api.UserId.Value }).FirstOrDefault();
 			//label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
 
