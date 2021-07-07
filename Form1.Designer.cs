@@ -539,10 +539,10 @@ namespace WindowsFormsApp2
 			// textBox7
 			// 
 			this.textBox7.BackColor = System.Drawing.Color.White;
-			this.textBox7.Location = new System.Drawing.Point(793, 608);
+			this.textBox7.Location = new System.Drawing.Point(772, 608);
 			this.textBox7.Name = "textBox7";
 			this.textBox7.ReadOnly = true;
-			this.textBox7.Size = new System.Drawing.Size(79, 20);
+			this.textBox7.Size = new System.Drawing.Size(100, 20);
 			this.textBox7.TabIndex = 36;
 			// 
 			// label16
