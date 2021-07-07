@@ -11,6 +11,7 @@ using VkNet;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
 using System.IO;
+
 namespace WindowsFormsApp2
 {
 	public partial class Form1 : Form
@@ -55,11 +56,14 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = getAuthForUser()
 			});
-			MessageBox.Show(api.UserId.Value.ToString());
 			var UserName = api.Account.GetProfileInfo();
 			label3.Text = $"Здравствуйте, {Encoding.UTF8.GetString(Encoding.Default.GetBytes(UserName.FirstName))}!";
-
-			
+			var get = api.Photo.Get(new PhotoGetParams
+			{
+				@OwnerId = Convert.ToInt64(api.Account.GetProfileInfo()),
+				@AlbumId = VkNet.Enums.SafetyEnums.PhotoAlbumType.Profile,
+			});
+			pictureBox1.Image = new Image(get[0]);
 		}
 
 		//
