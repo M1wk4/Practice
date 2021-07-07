@@ -74,10 +74,12 @@ namespace WindowsFormsApp2
 			this.label16 = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -140,11 +142,14 @@ namespace WindowsFormsApp2
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.AccPhoto;
 			this.pictureBox1.Location = new System.Drawing.Point(12, 60);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 10;
 			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Visible = false;
 			// 
 			// label3
 			// 
@@ -560,6 +565,15 @@ namespace WindowsFormsApp2
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.ClockTick);
 			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Location = new System.Drawing.Point(12, 60);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(150, 150);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 39;
+			this.pictureBox2.TabStop = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,6 +581,7 @@ namespace WindowsFormsApp2
 			this.AutoScroll = true;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 749);
+			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.label17);
 			this.Controls.Add(this.label16);
 			this.Controls.Add(this.textBox7);
@@ -613,6 +628,7 @@ namespace WindowsFormsApp2
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -662,6 +678,7 @@ namespace WindowsFormsApp2
 		public System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Timer timer1;
+		public System.Windows.Forms.PictureBox pictureBox2;
 	}
 }
 
