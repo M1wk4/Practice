@@ -270,10 +270,15 @@ namespace WindowsFormsApp2
 			//	e.Handled = true;
 		}
 
-        //
-        //ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
-        //
-        List<string> birth = new List<string>();
+		private void ClockTick(object sender, EventArgs e)
+		{
+			label17.Text = DateTime.Now.AddSeconds(1).ToString();
+		}
+
+		//
+		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
+		//
+		List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
 			if (textBox7.TextLength == 0)

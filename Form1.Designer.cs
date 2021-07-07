@@ -29,6 +29,7 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button2 = new System.Windows.Forms.Button();
@@ -71,6 +72,8 @@ namespace WindowsFormsApp2
 			this.textBox6 = new System.Windows.Forms.TextBox();
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.label16 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -127,7 +130,7 @@ namespace WindowsFormsApp2
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(12, 215);
+			this.button1.Location = new System.Drawing.Point(12, 266);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(150, 28);
 			this.button1.TabIndex = 9;
@@ -137,7 +140,7 @@ namespace WindowsFormsApp2
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+			this.pictureBox1.Location = new System.Drawing.Point(12, 60);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(150, 150);
 			this.pictureBox1.TabIndex = 10;
@@ -146,7 +149,7 @@ namespace WindowsFormsApp2
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label3.Location = new System.Drawing.Point(13, 166);
+			this.label3.Location = new System.Drawing.Point(13, 217);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(149, 46);
 			this.label3.TabIndex = 11;
@@ -524,9 +527,9 @@ namespace WindowsFormsApp2
 			// 
 			// textBox7
 			// 
-			this.textBox7.Location = new System.Drawing.Point(772, 608);
+			this.textBox7.Location = new System.Drawing.Point(793, 608);
 			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(100, 20);
+			this.textBox7.Size = new System.Drawing.Size(79, 20);
 			this.textBox7.TabIndex = 36;
 			// 
 			// label16
@@ -541,6 +544,22 @@ namespace WindowsFormsApp2
 			this.label16.Text = "ID пользователя";
 			this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// label17
+			// 
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label17.Location = new System.Drawing.Point(12, 9);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(150, 48);
+			this.label17.TabIndex = 38;
+			this.label17.Text = "Время";
+			this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// timer1
+			// 
+			this.timer1.Enabled = true;
+			this.timer1.Interval = 1000;
+			this.timer1.Tick += new System.EventHandler(this.ClockTick);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,6 +567,7 @@ namespace WindowsFormsApp2
 			this.AutoScroll = true;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 749);
+			this.Controls.Add(this.label17);
 			this.Controls.Add(this.label16);
 			this.Controls.Add(this.textBox7);
 			this.Controls.Add(this.textBox6);
@@ -640,6 +660,8 @@ namespace WindowsFormsApp2
 		private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
 		public System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
 
