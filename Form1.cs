@@ -271,10 +271,29 @@ namespace WindowsFormsApp2
 			label17.Text = DateTime.Now.AddSeconds(1).ToString();
 		}
 
-		//
-		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
-		//
-		List<string> birth = new List<string>();
+        private void button8_Click(object sender, EventArgs e)
+        {
+			var api = new VkApi();
+			api.Authorize(new ApiAuthParams
+			{
+				AccessToken = Per.x
+			});
+			var get = api.Wall.Get(new WallGetParams
+			{
+				OwnerId = int.Parse(textBox7.Text),
+				Count = 3,
+
+			}) ;
+			foreach (var wallPost in get.WallPosts)
+            {
+				textBox6.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(wallPost.Text)) + "\r\n";
+			}
+		}
+
+        //
+        //ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
+        //
+        List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
 			if (textBox7.TextLength == 0)
