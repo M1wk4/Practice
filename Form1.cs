@@ -207,7 +207,7 @@ namespace WindowsFormsApp2
 			{
 				var post = api.Wall.Post(new WallPostParams
 				{
-					OwnerId = -205658019,
+					OwnerId = -(Convert.ToInt64(GroupId)),
 					FriendsOnly = checkBox2.Checked,
 					FromGroup = checkBox3.Checked,
 					Message = textBox4.Text,
@@ -219,7 +219,7 @@ namespace WindowsFormsApp2
 			{
 				var post = api.Wall.Post(new WallPostParams
 				{
-					OwnerId = -205658019,
+					OwnerId = -(Convert.ToInt64(GroupId)),
 					FriendsOnly = checkBox2.Checked,
 					FromGroup = checkBox3.Checked,
 					Message = textBox4.Text,
@@ -249,10 +249,20 @@ namespace WindowsFormsApp2
 			//	e.Handled = true;
 		}
 
-		//
-		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
-		//
-		List<string> birth = new List<string>();
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //
+        //ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
+        //
+        List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
 			textBox6.Text = "";
@@ -261,10 +271,12 @@ namespace WindowsFormsApp2
 			{
 				AccessToken = Per.x
 			});
+
 			var getFriends = api_p.Friends.Get(new FriendsGetParams
 			{
+				UserId = int.Parse(textBox7.Text),
 				Fields = VkNet.Enums.Filters.ProfileFields.All
-			});
+			}) ;
 			foreach (User user in getFriends)
 				birth.Add(user.BirthDate);
 			int cout;
@@ -285,7 +297,7 @@ namespace WindowsFormsApp2
 						if (cout == 2 && us[i] != '.')
 							year += us[i];
 					}
-					if (cout == 2 && int.Parse(year) > 1950)
+					if (cout == 2 && int.Parse(year) > 1930)
 					{
 						year_n += int.Parse(year);
 						year_cout++;
