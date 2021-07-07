@@ -46,16 +46,16 @@ namespace WindowsFormsApp2
 			this.label5 = new System.Windows.Forms.Label();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.trackBar2 = new System.Windows.Forms.TrackBar();
+			this.label2 = new System.Windows.Forms.Label();
+			this.trackBar1 = new System.Windows.Forms.TrackBar();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.trackBar1 = new System.Windows.Forms.TrackBar();
-			this.trackBar2 = new System.Windows.Forms.TrackBar();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
 			this.label9 = new System.Windows.Forms.Label();
 			this.button6 = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -71,8 +71,8 @@ namespace WindowsFormsApp2
 			this.textBox6 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -258,6 +258,78 @@ namespace WindowsFormsApp2
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Visible = false;
 			// 
+			// monthCalendar1
+			// 
+			this.monthCalendar1.Location = new System.Drawing.Point(5, 111);
+			this.monthCalendar1.Name = "monthCalendar1";
+			this.monthCalendar1.TabIndex = 23;
+			// 
+			// label8
+			// 
+			this.label8.BackColor = System.Drawing.SystemColors.Control;
+			this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.Location = new System.Drawing.Point(6, 85);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(91, 23);
+			this.label8.TabIndex = 26;
+			this.label8.Text = "0";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label7
+			// 
+			this.label7.BackColor = System.Drawing.SystemColors.Control;
+			this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label7.Location = new System.Drawing.Point(6, 34);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(91, 23);
+			this.label7.TabIndex = 25;
+			this.label7.Text = "0";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label6
+			// 
+			this.label6.BackColor = System.Drawing.SystemColors.Control;
+			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label6.Location = new System.Drawing.Point(6, 62);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(91, 23);
+			this.label6.TabIndex = 24;
+			this.label6.Text = "Минуты";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// trackBar2
+			// 
+			this.trackBar2.Location = new System.Drawing.Point(105, 62);
+			this.trackBar2.Maximum = 59;
+			this.trackBar2.Name = "trackBar2";
+			this.trackBar2.Size = new System.Drawing.Size(104, 45);
+			this.trackBar2.TabIndex = 24;
+			this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+			// 
+			// label2
+			// 
+			this.label2.BackColor = System.Drawing.SystemColors.Control;
+			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Location = new System.Drawing.Point(6, 11);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(91, 23);
+			this.label2.TabIndex = 23;
+			this.label2.Text = "Часы";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// trackBar1
+			// 
+			this.trackBar1.Location = new System.Drawing.Point(105, 11);
+			this.trackBar1.Maximum = 23;
+			this.trackBar1.Name = "trackBar1";
+			this.trackBar1.Size = new System.Drawing.Size(104, 45);
+			this.trackBar1.TabIndex = 23;
+			this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+			// 
 			// checkBox3
 			// 
 			this.checkBox3.AutoSize = true;
@@ -294,78 +366,6 @@ namespace WindowsFormsApp2
 			this.checkBox4.Text = "Отложить";
 			this.checkBox4.UseVisualStyleBackColor = true;
 			this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-			// 
-			// trackBar1
-			// 
-			this.trackBar1.Location = new System.Drawing.Point(105, 11);
-			this.trackBar1.Maximum = 23;
-			this.trackBar1.Name = "trackBar1";
-			this.trackBar1.Size = new System.Drawing.Size(104, 45);
-			this.trackBar1.TabIndex = 23;
-			this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-			// 
-			// trackBar2
-			// 
-			this.trackBar2.Location = new System.Drawing.Point(105, 62);
-			this.trackBar2.Maximum = 59;
-			this.trackBar2.Name = "trackBar2";
-			this.trackBar2.Size = new System.Drawing.Size(104, 45);
-			this.trackBar2.TabIndex = 24;
-			this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-			// 
-			// label2
-			// 
-			this.label2.BackColor = System.Drawing.SystemColors.Control;
-			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label2.Location = new System.Drawing.Point(6, 11);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(91, 23);
-			this.label2.TabIndex = 23;
-			this.label2.Text = "Часы";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label6
-			// 
-			this.label6.BackColor = System.Drawing.SystemColors.Control;
-			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label6.Location = new System.Drawing.Point(6, 62);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(91, 23);
-			this.label6.TabIndex = 24;
-			this.label6.Text = "Минуты";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label7
-			// 
-			this.label7.BackColor = System.Drawing.SystemColors.Control;
-			this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label7.Location = new System.Drawing.Point(6, 34);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(91, 23);
-			this.label7.TabIndex = 25;
-			this.label7.Text = "0";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label8
-			// 
-			this.label8.BackColor = System.Drawing.SystemColors.Control;
-			this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label8.Location = new System.Drawing.Point(6, 85);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(91, 23);
-			this.label8.TabIndex = 26;
-			this.label8.Text = "0";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// monthCalendar1
-			// 
-			this.monthCalendar1.Location = new System.Drawing.Point(5, 111);
-			this.monthCalendar1.Name = "monthCalendar1";
-			this.monthCalendar1.TabIndex = 23;
 			// 
 			// label9
 			// 
@@ -523,6 +523,7 @@ namespace WindowsFormsApp2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScroll = true;
 			this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BGMainForm;
 			this.ClientSize = new System.Drawing.Size(884, 761);
 			this.Controls.Add(this.textBox6);
@@ -559,15 +560,15 @@ namespace WindowsFormsApp2
 			this.Controls.Add(this.textBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximumSize = new System.Drawing.Size(900, 800);
-			this.MinimumSize = new System.Drawing.Size(900, 800);
+			this.MinimumSize = new System.Drawing.Size(900, 400);
 			this.Name = "Form1";
 			this.Text = "API VK - Group №11";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
