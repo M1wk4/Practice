@@ -249,22 +249,14 @@ namespace WindowsFormsApp2
 			//	e.Handled = true;
 		}
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         //
         //ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
         //
         List<string> birth = new List<string>();
 		private void AgeOutput(object sender, EventArgs e)
 		{
+			if (textBox7.TextLength == 0)
+				return;
 			textBox6.Text = "";
 			var api_p = new VkApi();
 			api_p.Authorize(new ApiAuthParams
