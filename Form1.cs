@@ -50,7 +50,6 @@ namespace WindowsFormsApp2
 			textBox2.ReadOnly = false;
 			textBox4.ReadOnly = false;
 			textBox5.ReadOnly = false;
-			textBox6.ReadOnly = false;
 			var api = new VkApi();
 			api.Authorize(new ApiAuthParams
 			{
