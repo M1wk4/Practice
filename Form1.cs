@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using VkNet;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
+using System.IO;
 namespace WindowsFormsApp2
 {
 	public partial class Form1 : Form
@@ -119,7 +123,10 @@ namespace WindowsFormsApp2
 		{
 			textBox1.Text = "";
 			if (comboBox1.Items.Count > 0)
+			{
 				comboBox1.Items.Clear();
+				sub.Clear();
+			}
 			var api_group = new VkApi();
 			api_group.Authorize(new ApiAuthParams
 			{
@@ -157,8 +164,11 @@ namespace WindowsFormsApp2
 		private void FriendList(object sender, EventArgs e)
 		{
 			textBox1.Text = "";
-			if (comboBox1.Items.Count >= 0)
+			if (comboBox1.Items.Count > 0)
+			{
 				comboBox1.Items.Clear();
+				sub.Clear();
+			}
 			var api_p = new VkApi();
 			api_p.Authorize(new ApiAuthParams
 			{
@@ -228,6 +238,54 @@ namespace WindowsFormsApp2
 			if (textBox2.Text.Length == 0)
 				return;
 			var repost = api.Wall.Repost(@object: $"wall{textBox2.Text}", message: $"{textBox5.Text}", groupId: Convert.ToInt64(GroupId), markAsAds: checkBox5.Checked);
+		}
+
+		//
+		//ВЫЧИСЛЕНИЕ ПРИБЛИЗИТЕЛЬНОГО ВОЗРАСТА
+		//
+		List<string> birth = new List<string>();
+		private void AgeOutput(object sender, EventArgs e)
+		{
+			textBox6.Text = "";
+			var api_p = new VkApi();
+			api_p.Authorize(new ApiAuthParams
+			{
+				AccessToken = Per.x
+			});
+			var getFriends = api_p.Friends.Get(new FriendsGetParams
+			{
+				Fields = VkNet.Enums.Filters.ProfileFields.All
+			});
+			foreach (User user in getFriends)
+				birth.Add(user.BirthDate);
+			int cout;
+			string year;
+			int year_n, year_cout;
+			year_cout = 0;
+			year_n = 0;
+			foreach (string us in birth)
+			{
+				if (us != null)
+				{
+					year = "";
+					cout = 0;
+					for (int i = 0; i < us.Length; i++)
+					{
+						if (us[i] == '.')
+							cout++;
+						if (cout == 2 && us[i] != '.')
+							year += us[i];
+					}
+					if (cout == 2 && int.Parse(year) > 1950)
+					{
+						year_n += int.Parse(year);
+						year_cout++;
+						textBox6.Text += $"{year_cout}-й пользователь, {year} год\r\n";
+					}
+				}
+			}
+			double answ = 2021 - (year_n / year_cout);
+			textBox6.Text += $"==========\r\nПриблизительный возраст пользователя равен {answ}";
 		}
 	}
 }

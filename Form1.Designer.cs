@@ -493,7 +493,7 @@ namespace WindowsFormsApp2
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(247, 50);
 			this.label15.TabIndex = 33;
-			this.label15.Text = "Информация о дне(-ях?) рождения";
+			this.label15.Text = "Приблизительный возраст";
 			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// button7
@@ -506,6 +506,7 @@ namespace WindowsFormsApp2
 			this.button7.TabIndex = 34;
 			this.button7.Text = "Вывод";
 			this.button7.UseVisualStyleBackColor = true;
+			this.button7.Click += new System.EventHandler(this.AgeOutput);
 			// 
 			// textBox6
 			// 
@@ -517,7 +518,6 @@ namespace WindowsFormsApp2
 			this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.textBox6.Size = new System.Drawing.Size(247, 111);
 			this.textBox6.TabIndex = 35;
-			this.textBox6.Text = "НЕ ПЕРЕНЕС";
 			// 
 			// Form1
 			// 
